@@ -1,7 +1,7 @@
 // Converts design-pixel units (e.g. 268.7u) written in src/styles/home.src.css
 // into calc(268.7 * var(--u)) and writes src/styles/home.css.
 // --u is 1px at 1440px page width and scales down fluidly below that.
-import { readFileSync, writeFileSync, watch } from "node:fs";
+import { readFileSync, writeFileSync, watchFile } from "node:fs";
 
 const SRC = new URL("../src/styles/home.src.css", import.meta.url);
 const OUT = new URL("../src/styles/home.css", import.meta.url);
@@ -16,4 +16,5 @@ function build() {
 }
 
 build();
-if (process.argv.includes("--watch")) watch(SRC, build);
+// Polling is more reliable than fs.watch (editors/scripts often replace the file).
+if (process.argv.includes("--watch")) watchFile(SRC, { interval: 250 }, build);

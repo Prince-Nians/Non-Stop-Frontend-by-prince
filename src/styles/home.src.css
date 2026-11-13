@@ -37,6 +37,12 @@
 
 .strip { position: absolute; z-index: 3; pointer-events: none; height: auto; }
 
+/* Anchor jumps: keep section headings clear of the sticky header */
+.page :where(main > section, footer) { scroll-margin-top: 64px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.br-desktop { display: none; }
+
 /* ---------- Header ---------- */
 .hdr { position: sticky; top: 0; z-index: 50; background: #fff; height: 64px; }
 .hdr-canvas { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
@@ -52,13 +58,13 @@
 .hdr-nav-shops img { height: 28px; width: auto; object-fit: contain; }
 
 /* ---------- Hero (art coordinates shared by all breakpoints) ---------- */
-.hero { position: relative; z-index: 2; overflow: visible; --u: calc(100cqw / 840); height: calc(1040 * var(--u)); margin-top: 2px; }
+.hero { position: relative; z-index: 2; overflow: visible; --u: calc(100cqw / 700); height: calc(700 * var(--u)); margin-top: 2px; }
 .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
 .hero-canvas { position: relative; width: 100%; height: 100%; margin: 0 auto; }
-.hero-title { position: absolute; left: 61.5u; top: 330u; width: 717u; height: 240u; }
+.hero-title { position: absolute; z-index: 2; left: 70u; top: 330u; width: 560u; height: 187.4u; }
 .hero-cluster { position: absolute; left: 0; top: 0; width: 0; height: 0; }
-.hero-cluster-l { transform: translate(-87u, 390u); }
-.hero-cluster-r { transform: translate(-512u, 390u); }
+.hero-cluster-l { transform: translate(-70u, 214u) scale(.72); }
+.hero-cluster-r { transform: translate(-266u, 214u) scale(.72); }
 .hero-box { position: absolute; display: flex; align-items: center; justify-content: center; }
 .hero-box > div { flex: none; position: relative; }
 .hero-box img { position: absolute; }
@@ -113,11 +119,12 @@
 .band-frame img { position: absolute; inset: -0.99% -0.51%; width: 101.02%; height: 101.98%; }
 .band-buy-title { position: absolute; left: 0; right: 0; top: 62u; text-align: center; font-weight: 600; font-size: 29.511u; line-height: 60.64u; color: #fff; }
 .band-shop { position: absolute; top: 141.4u; width: 94.5u; height: 46.2u; }
+.band-shop a { position: absolute; inset: 0; display: block; }
 .band-shop img { position: absolute; }
 .band-shop-jio { left: 88u; background: #df1f25; }
 .band-shop-jio img { left: 25.14u; top: .73u; width: 44.731u; height: 44.731u; object-fit: cover; }
 .band-shop-zepto { left: 193.3u; background: #950edb; border: .984u solid #950edb; box-sizing: border-box; width: 94.435u; height: 46.234u; }
-.band-shop-zepto img { left: 17.5u; top: 12.6u; width: 60.847u; height: 20.282u; object-fit: cover; }
+.band-shop-zepto img { left: 18u; top: 13.1u; width: 60.847u; height: 20.282u; object-fit: cover; }
 .band-shop-blinkit { left: 300.4u; background: #ffec3c; }
 .band-shop-blinkit img { left: 13u; top: 13.36u; width: 69.246u; height: 18.275u; object-fit: cover; }
 .band-vec { position: absolute; left: 208.5u; top: 156.8u; width: 66.89u; height: 21.793u; z-index: 0; }
@@ -243,6 +250,7 @@
    ========================================================================== */
 @media (min-width: 640px) {
   .hdr { height: 72px; }
+  .page :where(main > section, footer) { scroll-margin-top: 72px; }
   .sec-title { font-size: 36px; }
   .prod-cards { max-width: 760px; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .prod-btn { font-size: 13px; height: 30px; }
@@ -268,7 +276,7 @@
   .hero { --u: min(1px, calc(100cqw / 1440)); height: 714u; margin-top: 2u; }
   .hero-bg { object-position: 50% 50%; }
   .hero-canvas { width: 1440u; margin: 0 auto; }
-  .hero-title { left: 336.75u; top: 233.2u; }
+  .hero-title { z-index: auto; left: 338u; top: 226u; width: 717u; height: 240u; }
   .hero-cluster-l, .hero-cluster-r { transform: none; }
 }
 
@@ -277,9 +285,11 @@
    ========================================================================== */
 @media (min-width: 1024px) {
   .sec-title { font-size: 40u; line-height: 66.124u; }
+  .br-desktop { display: inline; }
 
   /* Header */
   .hdr { height: 89u; }
+  .page :where(main > section, footer) { scroll-margin-top: 89u; }
   .hdr-canvas { display: block; width: 1440u; padding: 0; margin: 0 auto; }
   .hdr-logo { position: absolute; left: 74u; top: 13u; width: 92.257u; height: 61.421u; }
   .hdr-logo img { width: 100%; height: 100%; object-fit: cover; }
@@ -291,11 +301,14 @@
   .hdr-nav a { padding: 0; border: 0; font-weight: 500; font-size: 14.665u; line-height: 12.507u; white-space: nowrap; }
   .hdr-chev { display: block; position: absolute; left: 75.05u; top: 4.55u; width: 7.53u; height: 3.666u; }
   .hdr-shops { display: block; position: absolute; inset: 0; pointer-events: none; }
-  .hdr-shop-blinkit { position: absolute; left: 1279u; top: 26u; width: 87u; height: 35u; border-radius: 3u; background: #ffee00; }
-  .hdr-shops img { position: absolute; }
-  .hdr-shop-jio { left: 1162u; top: 28u; width: 30.948u; height: 30.948u; object-fit: cover; }
-  .hdr-shop-zepto { left: 1211u; top: 35u; width: 59.078u; height: 19.693u; object-fit: cover; }
-  .hdr-shop-blink { left: 1291u; top: 35u; width: 64.4u; height: 17u; object-fit: cover; }
+  .hdr-shop { position: absolute; display: block; pointer-events: auto; }
+  .hdr-shop img { position: absolute; }
+  .hdr-shop-jio { left: 1162u; top: 28u; width: 30.948u; height: 30.948u; }
+  .hdr-shop-jio img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hdr-shop-zepto { left: 1211u; top: 35u; width: 59.078u; height: 19.693u; }
+  .hdr-shop-zepto img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hdr-shop-blink { left: 1279u; top: 26u; width: 87u; height: 35u; border-radius: 3u; background: #ffee00; }
+  .hdr-shop-blink img { left: 12u; top: 9u; width: 64.4u; height: 17u; object-fit: cover; }
 
 
   /* Products */

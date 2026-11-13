@@ -1,3 +1,5 @@
+import { SHOPS, shopLinkProps } from "@/lib/shops";
+
 export default function PartnerBand() {
   return (
     <section className="band" id="partner" aria-label="Buy now and partner program">
@@ -10,13 +12,19 @@ export default function PartnerBand() {
           <h2 className="band-buy-title">BUY NOW</h2>
           <ul className="band-shops">
             <li className="band-shop band-shop-jio">
-              <img src="/figma/jiomart.png" alt="JioMart" />
+              <a href={SHOPS.jiomart.href} {...shopLinkProps} aria-label="Buy on JioMart">
+                <img src="/figma/jiomart.png" alt="" />
+              </a>
             </li>
             <li className="band-shop band-shop-zepto">
-              <img src="/figma/zepto.png" alt="Zepto" />
+              <a href={SHOPS.zepto.href} {...shopLinkProps} aria-label="Buy on Zepto">
+                <img src="/figma/zepto.png" alt="" />
+              </a>
             </li>
             <li className="band-shop band-shop-blinkit">
-              <img src="/figma/blinkit.png" alt="Blinkit" />
+              <a href={SHOPS.blinkit.href} {...shopLinkProps} aria-label="Buy on Blinkit">
+                <img src="/figma/blinkit.png" alt="" />
+              </a>
             </li>
           </ul>
           <img className="band-vec" src="/figma/partner-vec-3.svg" alt="" aria-hidden />

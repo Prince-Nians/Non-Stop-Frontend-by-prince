@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SHOPS, shopLinkProps } from "@/lib/shops";
 
 const NAV: { label: string; href: string; x: number; chevron?: boolean }[] = [
   { label: "HOME", href: "#top", x: 382 },
@@ -16,7 +17,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="hdr" id="top">
+    <header className="hdr">
       <div className="hdr-canvas">
         <a href="#top" className="hdr-logo" aria-label="NON STOP home">
           <img src="/figma/logo.png" alt="NON STOP" />
@@ -46,18 +47,29 @@ export default function Header() {
               </li>
             ))}
             <li className="hdr-nav-shops" aria-label="Buy online">
-              <img src="/figma/jiomart.png" alt="JioMart" />
-              <img src="/figma/zepto.png" alt="Zepto" />
-              <img src="/figma/blinkit.png" alt="Blinkit" />
+              <a href={SHOPS.jiomart.href} {...shopLinkProps} aria-label="Buy on JioMart">
+                <img src="/figma/jiomart.png" alt="" />
+              </a>
+              <a href={SHOPS.zepto.href} {...shopLinkProps} aria-label="Buy on Zepto">
+                <img src="/figma/zepto.png" alt="" />
+              </a>
+              <a href={SHOPS.blinkit.href} {...shopLinkProps} aria-label="Buy on Blinkit">
+                <img src="/figma/blinkit.png" alt="" />
+              </a>
             </li>
           </ul>
         </nav>
 
         <div className="hdr-shops" aria-label="Buy online">
-          <span className="hdr-shop-blinkit" />
-          <img className="hdr-shop-jio" src="/figma/jiomart.png" alt="JioMart" />
-          <img className="hdr-shop-zepto" src="/figma/zepto.png" alt="Zepto" />
-          <img className="hdr-shop-blink" src="/figma/blinkit.png" alt="Blinkit" />
+          <a className="hdr-shop hdr-shop-jio" href={SHOPS.jiomart.href} {...shopLinkProps} aria-label="Buy on JioMart">
+            <img src="/figma/jiomart.png" alt="" />
+          </a>
+          <a className="hdr-shop hdr-shop-zepto" href={SHOPS.zepto.href} {...shopLinkProps} aria-label="Buy on Zepto">
+            <img src="/figma/zepto.png" alt="" />
+          </a>
+          <a className="hdr-shop hdr-shop-blink" href={SHOPS.blinkit.href} {...shopLinkProps} aria-label="Buy on Blinkit">
+            <img src="/figma/blinkit.png" alt="" />
+          </a>
         </div>
       </div>
     </header>

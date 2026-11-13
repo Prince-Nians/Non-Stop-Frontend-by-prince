@@ -14,9 +14,10 @@ export default function Events() {
         <p className="events-desc">
           {" "}
           consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium consequat massa
-          quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium
+          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
+          <br className="br-desktop" /> pretium consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+          vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+          pede mollis pretium
         </p>
 
         <ul className="ev-list">
