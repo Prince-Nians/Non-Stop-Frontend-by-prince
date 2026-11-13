@@ -1,43 +1,40 @@
-export default function Social() {
+import type { Section } from "@/lib/content";
+
+export default function Social({
+  section,
+  photos,
+}: {
+  section: Section;
+  photos: { image: string | null; alt: string | null; url: string | null }[];
+}) {
   return (
     <section className="social" id="social" aria-labelledby="social-title">
-      <img className="social-bg" src="/figma/social-bg.png" alt="" />
+      <img className="social-bg" src={section.image ?? "/figma/social-bg.png"} alt="" />
       <div className="social-canvas">
         <h2 id="social-title" className="sec-title social-title">
-          Social Media Handle
+          {section.title}
         </h2>
-        <p className="social-desc">
-          {" "}
-          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-        </p>
+        <p className="social-desc">{section.description}</p>
 
         <div className="social-photos">
-          <div className="sp sp-1">
-            <div>
-              <img src="/figma/social-photo-1.png" alt="NON STOP community photo" />
-            </div>
-          </div>
-          <div className="sp sp-2">
-            <div>
-              <img src="/figma/social-photo-2.png" alt="NON STOP community photo" />
-            </div>
-          </div>
-          <div className="sp sp-3">
-            <div>
-              <img src="/figma/social-photo-3.png" alt="NON STOP community photo" />
-            </div>
-          </div>
+          {photos.slice(0, 3).map(
+            (p, i) =>
+              p.image && (
+                <div key={p.image} className={`sp sp-${i + 1}`}>
+                  <div>
+                    <img src={p.image} alt={p.alt ?? "NON STOP community photo"} />
+                  </div>
+                </div>
+              ),
+          )}
         </div>
 
-        <p className="social-copy">
-          Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a.
-          Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing
-          venenatis faucibus nisi pellentesque adipiscing venenatis faucibus nisi
-        </p>
-        <a href="#social" className="social-btn">
-          Read More
-        </a>
+        <p className="social-copy">{section.extra.copy}</p>
+        {section.button && (
+          <a href={section.button.url ?? "#social"} className="social-btn">
+            {section.button.label}
+          </a>
+        )}
       </div>
     </section>
   );

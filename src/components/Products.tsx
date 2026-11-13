@@ -1,42 +1,30 @@
-const FLAVOURS = [
-  { name: "Classic", color: "#053588", border: "#74c5e3", bg: "blue-bg", can: "blue-can", cls: "p-blue" },
-  { name: "Jungle", color: "#9dc96c", border: "#9dc96c", bg: "green-bg", can: "green-can", cls: "p-green" },
-  { name: "Boost", color: "#7566ff", border: "#872062", bg: "purple-bg", can: "purple-can", cls: "p-purple" },
-  { name: "Zero Sugar", color: "#007eb9", border: "#83cfe3", bg: "zero-sugar-bg", can: "zero-sugar-can", cls: "p-zero" },
-];
+import type { Product, Section } from "@/lib/content";
+import { Lines } from "@/lib/format";
 
-// Figma card order (left → right): blue, green, purple, zero sugar.
-const ORDER = [0, 1, 2, 3];
+// Card slots in the Figma layout (left → right). The design has room for four.
+const SLOT_CLASS = ["p-blue", "p-green", "p-purple", "p-zero"];
 
-export default function Products() {
+export default function Products({ section, products }: { section: Section; products: Product[] }) {
   return (
     <section className="prod" id="products" aria-labelledby="products-title">
       <div className="prod-canvas">
         <h2 id="products-title" className="sec-title prod-title">
-          Our Products
+          {section.title}
         </h2>
         <p className="prod-desc">
-          {" "}
-          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-          <br className="br-desktop" /> pretium. consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-          nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
-          felis eu pede mollis pretium.
+          <Lines text={section.description} />
         </p>
 
         <ul className="prod-cards">
-          {ORDER.map((i) => {
-            const f = FLAVOURS[i];
-            return (
-              <li key={f.name} className={`prod-card ${f.cls}`} style={{ "--bc": f.border } as React.CSSProperties}>
-                <img className="prod-card-bg" src={`/figma/${f.bg}.png`} alt="" />
-                <img className="prod-card-can" src={`/figma/${f.can}.png`} alt={`NON STOP ${f.name} can`} />
-                <a href="#products" className="prod-btn" style={{ background: f.color }}>
-                  Explore Flavour
-                </a>
-              </li>
-            );
-          })}
+          {products.slice(0, SLOT_CLASS.length).map((f, i) => (
+            <li key={f.slug} className={`prod-card ${SLOT_CLASS[i]}`} style={{ "--bc": f.border_color } as React.CSSProperties}>
+              {f.background_image && <img className="prod-card-bg" src={f.background_image} alt="" />}
+              {f.can_image && <img className="prod-card-can" src={f.can_image} alt={`NON STOP ${f.name} can`} />}
+              <a href={f.button.url ?? "#products"} className="prod-btn" style={{ background: f.color }}>
+                {f.button.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

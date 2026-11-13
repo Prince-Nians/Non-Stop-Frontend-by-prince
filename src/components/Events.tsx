@@ -1,41 +1,38 @@
-const EVENTS = [
-  { cls: "ev-1", img: "event-1", text: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus", fade: true },
-  { cls: "ev-2", img: "event-2", text: "", fade: false },
-  { cls: "ev-3", img: "event-1", text: "", fade: false },
-];
+import type { EventItem, Section } from "@/lib/content";
+import { Lines } from "@/lib/format";
 
-export default function Events() {
+// The Figma design has three event slots; only the first shows a caption over the photo.
+const SLOT_CLASS = ["ev-1", "ev-2", "ev-3"];
+
+export default function Events({ section, events }: { section: Section; events: EventItem[] }) {
   return (
     <section className="events" id="events" aria-labelledby="events-title">
       <div className="events-canvas">
         <h2 id="events-title" className="sec-title events-title">
-          Event &amp; Webinars
+          {section.title}
         </h2>
         <p className="events-desc">
-          {" "}
-          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-          <br className="br-desktop" /> pretium consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
-          vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-          pede mollis pretium
+          <Lines text={section.description} />
         </p>
 
         <ul className="ev-list">
-          {EVENTS.map((e) => (
-            <li key={e.cls} className={`ev ${e.cls}`}>
-              <a href="#events" aria-label="Open event">
-                <img className="ev-img" src={`/figma/${e.img}.png`} alt="" />
-                {e.fade && <span className="ev-fade" aria-hidden />}
-                {e.text && <span className="ev-text">{e.text}</span>}
+          {events.slice(0, SLOT_CLASS.length).map((e, i) => (
+            <li key={e.slug} className={`ev ${SLOT_CLASS[i]}`}>
+              <a href="#events" aria-label={e.title}>
+                {e.image && <img className="ev-img" src={e.image} alt="" />}
+                {i === 0 && <span className="ev-fade" aria-hidden />}
+                {i === 0 && <span className="ev-text">{e.title}</span>}
                 <img className="ev-arrow" src="/figma/arrow-right.svg" alt="" aria-hidden />
               </a>
             </li>
           ))}
         </ul>
 
-        <a href="#events" className="events-btn">
-          Read More
-        </a>
+        {section.button && (
+          <a href={section.button.url ?? "#events"} className="events-btn">
+            {section.button.label}
+          </a>
+        )}
       </div>
     </section>
   );

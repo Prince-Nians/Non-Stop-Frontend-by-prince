@@ -1,3 +1,5 @@
+import type { Section } from "@/lib/content";
+
 const RIBBON_A = [
   { x: -127.56, y: 2233.91 },
   { x: 173.21, y: 2264.32 },
@@ -16,28 +18,17 @@ const RIBBON_B = [
   { x: 1386.5, y: 2194.11, w: 206.03, h: 78.93 },
 ];
 
-const POINTS = [
-  { n: "01", title: "Energy for Active People" },
-  { n: "02", title: "Built for Every Challenge" },
-  { n: "03", title: "Best Support for Performance" },
-  { n: "04", title: "Premium Quality Standards" },
-];
-
 // Section top in the Figma frame — used to turn frame coordinates into section-relative ones.
 const TOP = 1888;
 
-export default function About() {
+export default function About({ section, points }: { section: Section; points: { title: string; body: string | null }[] }) {
   return (
     <section className="about" id="about" aria-labelledby="about-title">
       <div className="about-canvas">
         <h2 id="about-title" className="sec-title about-title">
-          About Us
+          {section.title}
         </h2>
-        <p className="about-desc">
-          {" "}
-          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-          rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-        </p>
+        <p className="about-desc">{section.description}</p>
 
         <div className="about-art">
         <div className="about-stage">
@@ -70,26 +61,28 @@ export default function About() {
 
         <div className="about-can">
           <div>
-            <img src="/figma/about-can.png" alt="NON STOP Classic can" />
+            <img src={section.image ?? "/figma/about-can.png"} alt="NON STOP Classic can" />
           </div>
         </div>
         </div>
         </div>
 
         <ol className="about-points">
-          {POINTS.map((p, i) => (
-            <li key={p.n} className={`about-point about-point-${i + 1}`}>
-              <span className="about-num">{p.n}</span>
+          {points.slice(0, 4).map((p, i) => (
+            <li key={p.title} className={`about-point about-point-${i + 1}`}>
+              <span className="about-num">{String(i + 1).padStart(2, "0")}</span>
               <img className="about-rule" src="/figma/about-line.svg" alt="" aria-hidden />
               <h3>{p.title}</h3>
-              <p>Cras dapibus. Vivamus elementum semper nisi</p>
+              <p>{p.body}</p>
             </li>
           ))}
         </ol>
 
-        <a href="#partner" className="about-btn">
-          Become a Partner
-        </a>
+        {section.button && (
+          <a href={section.button.url ?? "#partner"} className="about-btn">
+            {section.button.label}
+          </a>
+        )}
       </div>
       <img className="strip strip-about" src="/figma/checker-social.svg" alt="" aria-hidden />
     </section>

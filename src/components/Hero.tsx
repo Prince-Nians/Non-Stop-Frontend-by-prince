@@ -1,10 +1,12 @@
-export default function Hero() {
+import type { Section } from "@/lib/content";
+
+export default function Hero({ section }: { section?: Section }) {
   return (
-    <section className="hero" aria-label="Stay Nonstop">
-      <img className="hero-bg" src="/figma/hero-bg.png" alt="" />
+    <section className="hero" aria-label={section?.title ?? "Stay Nonstop"}>
+      <img className="hero-bg" src={section?.image ?? "/figma/hero-bg.png"} alt="" />
       <div className="hero-canvas">
-        <h1 className="sr-only">Stay Nonstop</h1>
-        <img className="hero-title" src="/figma/hero-title.svg" alt="" aria-hidden />
+        <h1 className="sr-only">{section?.title ?? "Stay Nonstop"}</h1>
+        <img className="hero-title" src={section?.image_secondary ?? "/figma/hero-title.svg"} alt="" aria-hidden />
 
         {/* left cluster */}
         <div className="hero-cluster hero-cluster-l">

@@ -1,0 +1,352 @@
+{
+  "settings": {
+    "site_name": "NON STOP",
+    "logo": "/figma/logo.png",
+    "phone": "+91 00000 00000",
+    "email": "info@nonstop.example",
+    "copyright": "© 2026 NON Stop. All Rights Reserved",
+    "social": {
+      "facebook": "#",
+      "youtube": "#",
+      "linkedin": "#",
+      "twitter": "#"
+    },
+    "seo": {
+      "title": "NON STOP — Stay Nonstop",
+      "description": null
+    }
+  },
+  "nav": {
+    "header": [
+      {
+        "label": "HOME",
+        "url": "#top"
+      },
+      {
+        "label": "ABOUT US",
+        "url": "#about"
+      },
+      {
+        "label": "PRODUCTS",
+        "url": "#products"
+      },
+      {
+        "label": "EVENTS",
+        "url": "#events"
+      },
+      {
+        "label": "BLOGS",
+        "url": "#blogs"
+      },
+      {
+        "label": "PARTNERSHIP",
+        "url": "#partner"
+      },
+      {
+        "label": "CONTACT US",
+        "url": "#contact"
+      }
+    ],
+    "footer": [
+      {
+        "label": "Home",
+        "url": "#top"
+      },
+      {
+        "label": "Blogs",
+        "url": "#blogs"
+      },
+      {
+        "label": "About us",
+        "url": "#about"
+      },
+      {
+        "label": "Partnerships",
+        "url": "#partner"
+      },
+      {
+        "label": "Products",
+        "url": "#products"
+      },
+      {
+        "label": "contact us",
+        "url": "#contact"
+      },
+      {
+        "label": "Events",
+        "url": "#events"
+      }
+    ],
+    "legal": [
+      {
+        "label": "Disclaimer",
+        "url": "#top"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "#top"
+      },
+      {
+        "label": "Site Map",
+        "url": "#top"
+      }
+    ]
+  },
+  "shops": [
+    {
+      "name": "JioMart",
+      "slug": "jiomart",
+      "url": "https://www.jiomart.com",
+      "logo": "/figma/jiomart.png"
+    },
+    {
+      "name": "Zepto",
+      "slug": "zepto",
+      "url": "https://www.zeptonow.com",
+      "logo": "/figma/zepto.png"
+    },
+    {
+      "name": "Blinkit",
+      "slug": "blinkit",
+      "url": "https://blinkit.com",
+      "logo": "/figma/blinkit.png"
+    }
+  ],
+  "sections": {
+    "hero": {
+      "title": "Stay Nonstop",
+      "subtitle": null,
+      "description": null,
+      "button": null,
+      "image": "/figma/hero-bg.png",
+      "image_secondary": "/figma/hero-title.svg",
+      "extra": {}
+    },
+    "partner": {
+      "title": "BECOME A PARTNER",
+      "subtitle": "PARTNER PROGRAM",
+      "description": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada",
+      "button": {
+        "label": "Know More",
+        "url": "#partner"
+      },
+      "image": "/figma/products-bg.png",
+      "image_secondary": null,
+      "extra": {
+        "buy_now_title": "BUY NOW"
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": {
+        "label": "Become a Partner",
+        "url": "#partner"
+      },
+      "image": "/figma/about-can.png",
+      "image_secondary": null,
+      "extra": {}
+    },
+    "social": {
+      "title": "Social Media Handle",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": {
+        "label": "Read More",
+        "url": "#social"
+      },
+      "image": "/figma/social-bg.png",
+      "image_secondary": null,
+      "extra": {
+        "copy": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi pellentesque adipiscing venenatis faucibus nisi"
+      }
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis\npretium. consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {}
+    },
+    "events": {
+      "title": "Event & Webinars",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis\npretium consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium",
+      "button": {
+        "label": "Read More",
+        "url": "#events"
+      },
+      "image": null,
+      "image_secondary": null,
+      "extra": {}
+    },
+    "blogs": {
+      "title": "Blogs",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. at massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": null,
+      "image": "/figma/blogs-bg.png",
+      "image_secondary": null,
+      "extra": {}
+    }
+  },
+  "products": [
+    {
+      "name": "Classic",
+      "slug": "classic",
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "color": "#053588",
+      "border_color": "#74c5e3",
+      "background_image": "/figma/blue-bg.png",
+      "can_image": "/figma/blue-can.png",
+      "button": {
+        "label": "Explore Flavour",
+        "url": "#products"
+      }
+    },
+    {
+      "name": "Jungle",
+      "slug": "jungle",
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "color": "#9dc96c",
+      "border_color": "#9dc96c",
+      "background_image": "/figma/green-bg.png",
+      "can_image": "/figma/green-can.png",
+      "button": {
+        "label": "Explore Flavour",
+        "url": "#products"
+      }
+    },
+    {
+      "name": "Boost",
+      "slug": "boost",
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "color": "#7566ff",
+      "border_color": "#872062",
+      "background_image": "/figma/purple-bg.png",
+      "can_image": "/figma/purple-can.png",
+      "button": {
+        "label": "Explore Flavour",
+        "url": "#products"
+      }
+    },
+    {
+      "name": "Zero Sugar",
+      "slug": "zero-sugar",
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "color": "#007eb9",
+      "border_color": "#83cfe3",
+      "background_image": "/figma/zero-sugar-bg.png",
+      "can_image": "/figma/zero-sugar-can.png",
+      "button": {
+        "label": "Explore Flavour",
+        "url": "#products"
+      }
+    }
+  ],
+  "about_points": [
+    {
+      "title": "Energy for Active People",
+      "body": "Cras dapibus. Vivamus elementum semper nisi"
+    },
+    {
+      "title": "Built for Every Challenge",
+      "body": "Cras dapibus. Vivamus elementum semper nisi"
+    },
+    {
+      "title": "Best Support for Performance",
+      "body": "Cras dapibus. Vivamus elementum semper nisi"
+    },
+    {
+      "title": "Premium Quality Standards",
+      "body": "Cras dapibus. Vivamus elementum semper nisi"
+    }
+  ],
+  "social_photos": [
+    {
+      "image": "/figma/social-photo-1.png",
+      "alt": "NON STOP community photo",
+      "url": null
+    },
+    {
+      "image": "/figma/social-photo-2.png",
+      "alt": "NON STOP community photo",
+      "url": null
+    },
+    {
+      "image": "/figma/social-photo-3.png",
+      "alt": "NON STOP community photo",
+      "url": null
+    }
+  ],
+  "events": [
+    {
+      "title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus",
+      "slug": "event-1",
+      "image": "/figma/event-1.png",
+      "published_at": "2026-11-13T10:45:27+00:00"
+    },
+    {
+      "title": "Upcoming event",
+      "slug": "event-2",
+      "image": "/figma/event-2.png",
+      "published_at": "2026-11-13T10:45:27+00:00"
+    },
+    {
+      "title": "Upcoming event",
+      "slug": "event-3",
+      "image": "/figma/event-1.png",
+      "published_at": "2026-11-13T10:45:27+00:00"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Ingredient Breakdowns",
+      "slug": "ingredient-breakdowns",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a",
+      "image": "/figma/blog-main.png",
+      "featured": true,
+      "published_at": "2026-11-13T10:45:28+00:00"
+    },
+    {
+      "title": "Flavor & Product Launches",
+      "slug": "flavor-product-launches",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-12T10:45:28+00:00"
+    },
+    {
+      "title": "Market Trends",
+      "slug": "market-trends",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-11T10:45:28+00:00"
+    },
+    {
+      "title": "Health & Safety",
+      "slug": "health-safety",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-10T10:45:28+00:00"
+    },
+    {
+      "title": "Regional Guides",
+      "slug": "regional-guides",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-09T10:45:28+00:00"
+    }
+  ]
+}
