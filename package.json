@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "css": "node scripts/u.mjs",
+    "dev": "node scripts/u.mjs && next dev",
+    "build": "node scripts/u.mjs && next build",
     "start": "next start",
     "lint": "eslint"
   },
