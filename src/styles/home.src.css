@@ -48,15 +48,17 @@
 .hdr-nav ul { display: flex; flex-direction: column; padding: 6px 16px 14px; }
 .hdr-nav a { display: block; padding: 13px 0; font-weight: 500; font-size: 16px; line-height: 1.2; border-bottom: 1px solid #e6e6e6; }
 .hdr-chev, .hdr-shops { display: none; }
+.hdr-nav .hdr-nav-shops { display: flex; align-items: center; gap: 14px; padding-top: 14px; }
+.hdr-nav-shops img { height: 28px; width: auto; object-fit: contain; }
 
 /* ---------- Hero (art coordinates shared by all breakpoints) ---------- */
-.hero { position: relative; z-index: 2; overflow: visible; --u: min(1.05px, calc(100cqw / 840)); height: calc(800 * var(--u)); margin-top: 2px; }
-.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-.hero-canvas { position: relative; width: calc(840 * var(--u)); height: 100%; margin: 0 auto; }
-.hero-title { position: absolute; left: 61.5u; top: 6u; width: 717u; height: 240u; }
+.hero { position: relative; z-index: 2; overflow: visible; --u: calc(100cqw / 840); height: calc(1040 * var(--u)); margin-top: 2px; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+.hero-canvas { position: relative; width: 100%; height: 100%; margin: 0 auto; }
+.hero-title { position: absolute; left: 61.5u; top: 330u; width: 717u; height: 240u; }
 .hero-cluster { position: absolute; left: 0; top: 0; width: 0; height: 0; }
-.hero-cluster-l { transform: translate(-87u, 215u); }
-.hero-cluster-r { transform: translate(-512u, 215u); }
+.hero-cluster-l { transform: translate(-87u, 390u); }
+.hero-cluster-r { transform: translate(-512u, 390u); }
 .hero-box { position: absolute; display: flex; align-items: center; justify-content: center; }
 .hero-box > div { flex: none; position: relative; }
 .hero-box img { position: absolute; }
@@ -89,7 +91,7 @@
 /* ---------- Products ---------- */
 .prod { position: relative; background: #e7fbff; padding: 44px 16px 56px; }
 .prod-title { color: var(--navy); }
-.prod-desc { margin: 12px auto 0; max-width: 720px; text-align: center; font-size: 14px; line-height: 1.5; letter-spacing: .02em; color: #003186; }
+.prod-desc { margin: 12px auto 0; max-width: 720px; text-align: center; font-size: 14px; line-height: 1.5; letter-spacing: .02em; color: #003186; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .prod-cards { margin: 28px auto 0; max-width: 620px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .prod-card { position: relative; aspect-ratio: 268.709 / 289.844; border-radius: 7.915px; overflow: hidden; box-shadow: 0 3.5px 3.5px rgba(0,0,0,.25); background: #fff; }
 .prod-card::after { content: ""; position: absolute; inset: 0; border: 1.759px solid var(--bc, #74c5e3); border-radius: 7.915px; pointer-events: none; z-index: 3; }
@@ -100,7 +102,7 @@
 .p-green .prod-card-can { height: 87.5%; left: 5.57%; top: 8.97%; width: 88.76%; }
 .p-purple .prod-card-can { height: 90.09%; left: 9.3%; top: 6.9%; width: 80.98%; }
 .p-zero .prod-card-can { height: 95.22%; left: 11.99%; top: 3.11%; width: 76.01%; }
-.prod-btn { position: absolute; left: 21.96%; width: 55.45%; top: 84.2%; height: 10%; border-radius: 2.6px; color: #fff; font-weight: 700; font-size: clamp(11px, 3.4vw, 16px); text-transform: uppercase; display: flex; align-items: center; justify-content: center; z-index: 2; white-space: nowrap; }
+.prod-btn { position: absolute; left: 8%; width: 84%; bottom: 10px; height: 34px; border-radius: 3px; color: #fff; font-weight: 700; font-size: 14px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; z-index: 2; white-space: nowrap; }
 
 /* ---------- Buy now / partner band ---------- */
 .band { position: relative; padding: 36px 0 44px; --u: calc(100cqw / 540); }
@@ -129,7 +131,25 @@
 .about { position: relative; padding: 48px 16px 64px; }
 .about-title { color: var(--navy); }
 .about-desc { margin: 12px auto 0; max-width: 680px; text-align: center; font-size: 14px; line-height: 1.7; letter-spacing: .02em; color: var(--ink); }
-.ribbons, .about-can { display: none; }
+/* About art: same Figma coordinates, shown in a cropped, scaled stage on phones/tablets */
+.about-art { position: relative; --u: calc(100cqw / 900); height: calc(545 * var(--u)); margin: 14px -16px 0; overflow: hidden; }
+.about-stage { position: absolute; left: 50%; top: calc(-212 * var(--u)); width: calc(1440 * var(--u)); margin-left: calc(-720 * var(--u)); height: calc(1112 * var(--u)); }
+.ribbons { position: absolute; inset: 0; }
+.ribbon { position: absolute; display: flex; align-items: center; justify-content: center; }
+.ribbon-a { left: -93.5u; top: 331.64u; width: 1549.364u; height: 236.705u; }
+.ribbon-b { left: -71.74u; top: 315.54u; width: 1540.763u; height: 339.739u; }
+.ribbon-bar { flex: none; width: 1549.042u; height: 81.309u; }
+.ribbon-bar-a { background: #0062a0; transform: rotate(5.77deg); }
+.ribbon-bar-b { background: #21306a; transform: rotate(-9.65deg); }
+.ribbon-txt { position: absolute; left: calc(var(--x) * var(--u)); top: calc(var(--y) * var(--u)); display: flex; align-items: center; justify-content: center; }
+.ribbon-txt p { flex: none; font-weight: 700; font-size: 34u; line-height: normal; color: #fff; width: 201.188u; height: 45.867u; white-space: nowrap; }
+.ribbon-txt-a { width: 204.781u; height: 65.87u; }
+.ribbon-txt-a p { transform: rotate(5.77deg); }
+.ribbon-txt-b { width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u)); }
+.ribbon-txt-b p { transform: rotate(-9.65deg); }
+.about-can { display: flex; position: absolute; left: 533u; top: 208.03u; width: 374.059u; height: 554.984u; align-items: center; justify-content: center; }
+.about-can > div { flex: none; transform: rotate(-10.88deg); width: 282.731u; height: 510.801u; position: relative; }
+.about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .about-points { margin: 36px auto 0; max-width: 620px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
 .about-num { display: block; font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--blue); }
 .about-rule { width: 100%; max-width: 134.6px; height: 1.4px; margin: 6px 0 8px; }
@@ -225,7 +245,7 @@
   .hdr { height: 72px; }
   .sec-title { font-size: 36px; }
   .prod-cards { max-width: 760px; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .prod-btn { font-size: clamp(10px, 1.7vw, 14px); }
+  .prod-btn { font-size: 13px; height: 30px; }
   .about-points { max-width: 760px; grid-template-columns: repeat(4, 1fr); }
   .about-point h3 { font-size: 17px; }
   .ev-list { max-width: 760px; grid-template-columns: 1.7fr 1fr 1fr; }
@@ -242,6 +262,17 @@
 }
 
 /* ==========================================================================
+   Hero uses the Figma composition (scaled) from tablet width up
+   ========================================================================== */
+@media (min-width: 768px) {
+  .hero { --u: min(1px, calc(100cqw / 1440)); height: 714u; margin-top: 2u; }
+  .hero-bg { object-position: 50% 50%; }
+  .hero-canvas { width: 1440u; margin: 0 auto; }
+  .hero-title { left: 336.75u; top: 233.2u; }
+  .hero-cluster-l, .hero-cluster-r { transform: none; }
+}
+
+/* ==========================================================================
    Desktop (1024px+) — pixel layout of the Figma frame
    ========================================================================== */
 @media (min-width: 1024px) {
@@ -255,6 +286,7 @@
   .hdr-burger { display: none; }
   .hdr-nav { display: block; position: static; box-shadow: none; background: none; }
   .hdr-nav ul { display: block; padding: 0; }
+  .hdr-nav .hdr-nav-shops { display: none; }
   .hdr-nav li { position: absolute; top: 40u; left: calc(var(--x) * var(--u)); }
   .hdr-nav a { padding: 0; border: 0; font-weight: 500; font-size: 14.665u; line-height: 12.507u; white-space: nowrap; }
   .hdr-chev { display: block; position: absolute; left: 75.05u; top: 4.55u; width: 7.53u; height: 3.666u; }
@@ -265,19 +297,11 @@
   .hdr-shop-zepto { left: 1211u; top: 35u; width: 59.078u; height: 19.693u; object-fit: cover; }
   .hdr-shop-blink { left: 1291u; top: 35u; width: 64.4u; height: 17u; object-fit: cover; }
 
-  /* Hero */
-  .hero { --u: min(1px, calc(100cqw / 1440)); height: 714u; margin-top: 2u; }
-  .hero-bg { object-position: 50% 50%; }
-  .hero-canvas { width: 1440u; margin: 0 auto; }
-  .hero-title { left: 336.75u; top: 233.2u; }
-  .hero-cluster-l, .hero-cluster-r { transform: none; }
-  .hero-sparkle { display: block; }
-  .hero-sparkle { display: none; } /* decorative sparkle sits under the title in Figma; hidden until verified */
 
   /* Products */
   .prod { height: 651u; padding: 0; }
   .prod .prod-title { position: absolute; left: 0; right: 0; top: 69u; margin: 0; }
-  .prod-desc { position: absolute; left: 164u; top: 135u; width: 1108u; max-width: none; margin: 0; font-size: 14u; line-height: 21u; letter-spacing: .28u; }
+  .prod-desc { display: block; overflow: visible; -webkit-line-clamp: unset; position: absolute; left: 164u; top: 135u; width: 1108u; max-width: none; margin: 0; font-size: 14u; line-height: 21u; letter-spacing: .28u; }
   .prod-card { aspect-ratio: auto; position: absolute; top: 247u; width: 268.709u; height: 289.844u; border-radius: 7.915u; box-shadow: 0 3.518u 3.518u rgba(0,0,0,.25); }
   .prod-card::after { border-width: 1.759u; border-radius: 7.915u; }
   .prod-cards { display: block; position: absolute; inset: 0; margin: 0; max-width: none; width: 1440u; left: 50%; transform: translateX(-50%); }
@@ -285,7 +309,7 @@
   .p-green { left: 447.92u; }
   .p-purple { left: 725.84u; }
   .p-zero { left: 1003.77u; }
-  .prod-btn { width: 149u; height: 29u; top: 244u; left: 59u; border-radius: 2.638u; font-size: 16u; line-height: 10.554u; padding-top: 8u; align-items: flex-start; box-sizing: border-box; }
+  .prod-btn { width: 149u; height: 29u; top: 244u; bottom: auto; left: 59u; border-radius: 2.638u; font-size: 16u; line-height: 10.554u; padding-top: 8u; align-items: flex-start; box-sizing: border-box; }
   .p-green .prod-btn { left: 54.08u; }
   .p-purple .prod-btn { left: 60.16u; top: 245u; }
   .p-zero .prod-btn { left: 59.23u; top: 245u; }
@@ -305,22 +329,8 @@
   .about-canvas { position: relative; width: 1440u; height: 100%; margin: 0 auto; }
   .about-title { left: 0; right: 0; }
   .about-desc { position: absolute; left: 351u; top: 122u; width: 725u; max-width: none; margin: 0; font-size: 14u; line-height: 24u; letter-spacing: .28u; }
-  .ribbons { display: block; position: absolute; inset: 0; }
-  .ribbon { position: absolute; display: flex; align-items: center; justify-content: center; }
-  .ribbon-a { left: -93.5u; top: 331.64u; width: 1549.364u; height: 236.705u; }
-  .ribbon-b { left: -71.74u; top: 315.54u; width: 1540.763u; height: 339.739u; }
-  .ribbon-bar { flex: none; width: 1549.042u; height: 81.309u; }
-  .ribbon-bar-a { background: #0062a0; transform: rotate(5.77deg); }
-  .ribbon-bar-b { background: #21306a; transform: rotate(-9.65deg); }
-  .ribbon-txt { position: absolute; left: calc(var(--x) * var(--u)); top: calc(var(--y) * var(--u)); display: flex; align-items: center; justify-content: center; }
-  .ribbon-txt p { flex: none; font-weight: 700; font-size: 34u; line-height: normal; color: #fff; width: 201.188u; height: 45.867u; white-space: nowrap; }
-  .ribbon-txt-a { width: 204.781u; height: 65.87u; }
-  .ribbon-txt-a p { transform: rotate(5.77deg); }
-  .ribbon-txt-b { width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u)); }
-  .ribbon-txt-b p { transform: rotate(-9.65deg); }
-  .about-can { display: flex; position: absolute; left: 533u; top: 208.03u; width: 374.059u; height: 554.984u; align-items: center; justify-content: center; }
-  .about-can > div { flex: none; transform: rotate(-10.88deg); width: 282.731u; height: 510.801u; position: relative; }
-  .about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .about-art { position: absolute; inset: 0; margin: 0; height: auto; overflow: visible; --u: min(1px, calc(100cqw / 1440)); }
+  .about-stage { position: absolute; inset: 0; left: 0; top: 0; width: auto; margin: 0; height: auto; }
   .about-points { display: block; position: absolute; inset: 0; margin: 0; max-width: none; }
   .about-point { position: absolute; top: 744.03u; }
   .about-point-1 { left: 169u; }

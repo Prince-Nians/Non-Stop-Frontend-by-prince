@@ -45,6 +45,11 @@ export default function Header() {
                 {item.chevron && <img className="hdr-chev" src="/figma/chevron-down.svg" alt="" />}
               </li>
             ))}
+            <li className="hdr-nav-shops" aria-label="Buy online">
+              <img src="/figma/jiomart.png" alt="JioMart" />
+              <img src="/figma/zepto.png" alt="Zepto" />
+              <img src="/figma/blinkit.png" alt="Blinkit" />
+            </li>
           </ul>
         </nav>
 

@@ -39,6 +39,8 @@ export default function About() {
           rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
         </p>
 
+        <div className="about-art">
+        <div className="about-stage">
         <div className="ribbons" aria-hidden>
           <div className="ribbon ribbon-a">
             <div className="ribbon-bar ribbon-bar-a" />
@@ -70,6 +72,8 @@ export default function About() {
           <div>
             <img src="/figma/about-can.png" alt="NON STOP Classic can" />
           </div>
+        </div>
+        </div>
         </div>
 
         <ol className="about-points">
