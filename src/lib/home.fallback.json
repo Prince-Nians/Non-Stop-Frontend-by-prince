@@ -162,15 +162,6 @@
         "copy": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi pellentesque adipiscing venenatis faucibus nisi"
       }
     },
-    "products": {
-      "title": "Our Products",
-      "subtitle": null,
-      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis\npretium. consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-      "button": null,
-      "image": null,
-      "image_secondary": null,
-      "extra": {}
-    },
     "events": {
       "title": "Event & Webinars",
       "subtitle": null,
@@ -189,6 +180,15 @@
       "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. at massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
       "button": null,
       "image": "/figma/blogs-bg.png",
+      "image_secondary": null,
+      "extra": {}
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis\npretium. consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": null,
+      "image": null,
       "image_secondary": null,
       "extra": {}
     }
@@ -247,6 +247,56 @@
       }
     }
   ],
+  "about_slides": [
+    {
+      "name": "Classic",
+      "can_image": "/figma/about-can.png",
+      "colors": {
+        "ribbon_a": "#0062a0",
+        "ribbon_b": "#21306a",
+        "title": "#053588",
+        "number": "#0062a0",
+        "point_title": "#21306a",
+        "button": "#008240"
+      }
+    },
+    {
+      "name": "Jungle",
+      "can_image": "/figma/about-can-jungle.png",
+      "colors": {
+        "ribbon_a": "#71c603",
+        "ribbon_b": "#027d2e",
+        "title": "#027d2e",
+        "number": "#71c603",
+        "point_title": "#027d2e",
+        "button": "#027d2e"
+      }
+    },
+    {
+      "name": "Boost",
+      "can_image": "/figma/about-can-boost.png",
+      "colors": {
+        "ribbon_a": "#872062",
+        "ribbon_b": "#321862",
+        "title": "#321862",
+        "number": "#872062",
+        "point_title": "#321862",
+        "button": "#008240"
+      }
+    },
+    {
+      "name": "Zero Sugar",
+      "can_image": "/figma/about-can-zero.png",
+      "colors": {
+        "ribbon_a": "#77c6db",
+        "ribbon_b": "#0091ae",
+        "title": "#053588",
+        "number": "#77c6db",
+        "point_title": "#008fad",
+        "button": "#008240"
+      }
+    }
+  ],
   "about_points": [
     {
       "title": "Energy for Active People",
@@ -287,19 +337,19 @@
       "title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus",
       "slug": "event-1",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-13T10:45:27+00:00"
+      "published_at": "2026-11-16T06:12:57+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-2",
       "image": "/figma/event-2.png",
-      "published_at": "2026-11-13T10:45:27+00:00"
+      "published_at": "2026-11-16T06:12:57+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-3",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-13T10:45:27+00:00"
+      "published_at": "2026-11-16T06:12:57+00:00"
     }
   ],
   "blogs": [
@@ -310,7 +360,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a",
       "image": "/figma/blog-main.png",
       "featured": true,
-      "published_at": "2026-11-13T10:45:28+00:00"
+      "published_at": "2026-11-16T06:12:57+00:00"
     },
     {
       "title": "Flavor & Product Launches",
@@ -319,7 +369,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-12T10:45:28+00:00"
+      "published_at": "2026-11-15T06:12:57+00:00"
     },
     {
       "title": "Market Trends",
@@ -328,7 +378,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-11T10:45:28+00:00"
+      "published_at": "2026-11-14T06:12:58+00:00"
     },
     {
       "title": "Health & Safety",
@@ -337,7 +387,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-10T10:45:28+00:00"
+      "published_at": "2026-11-13T06:12:58+00:00"
     },
     {
       "title": "Regional Guides",
@@ -346,7 +396,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-09T10:45:28+00:00"
+      "published_at": "2026-11-12T06:12:58+00:00"
     }
   ]
 }

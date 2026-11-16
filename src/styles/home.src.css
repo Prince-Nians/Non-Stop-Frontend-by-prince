@@ -136,7 +136,7 @@
 
 /* ---------- About ---------- */
 .about { position: relative; padding: 48px 16px 64px; }
-.about-title { color: var(--navy); }
+.about-title { color: var(--about-title, var(--navy)); transition: color .6s ease; }
 .about-desc { margin: 12px auto 0; max-width: 680px; text-align: center; font-size: 14px; line-height: 1.7; letter-spacing: .02em; color: var(--ink); }
 /* About art: same Figma coordinates, shown in a cropped, scaled stage on phones/tablets */
 .about-art { position: relative; --u: calc(100cqw / 900); height: calc(545 * var(--u)); margin: 14px -16px 0; overflow: hidden; }
@@ -146,23 +146,54 @@
 .ribbon-a { left: -93.5u; top: 331.64u; width: 1549.364u; height: 236.705u; }
 .ribbon-b { left: -71.74u; top: 315.54u; width: 1540.763u; height: 339.739u; }
 .ribbon-bar { flex: none; width: 1549.042u; height: 81.309u; }
-.ribbon-bar-a { background: #0062a0; transform: rotate(5.77deg); }
-.ribbon-bar-b { background: #21306a; transform: rotate(-9.65deg); }
+.ribbon-bar-a { background: var(--about-a, #0062a0); transform: rotate(5.77deg); transition: background-color .6s ease; }
+.ribbon-bar-b { background: var(--about-b, #21306a); transform: rotate(-9.65deg); transition: background-color .6s ease; }
 .ribbon-txt { position: absolute; left: calc(var(--x) * var(--u)); top: calc(var(--y) * var(--u)); display: flex; align-items: center; justify-content: center; }
 .ribbon-txt p { flex: none; font-weight: 700; font-size: 34u; line-height: normal; color: #fff; width: 201.188u; height: 45.867u; white-space: nowrap; }
 .ribbon-txt-a { width: 204.781u; height: 65.87u; }
 .ribbon-txt-a p { transform: rotate(5.77deg); }
 .ribbon-txt-b { width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u)); }
 .ribbon-txt-b p { transform: rotate(-9.65deg); }
-.about-can { display: flex; position: absolute; left: 533u; top: 208.03u; width: 374.059u; height: 554.984u; align-items: center; justify-content: center; }
-.about-can > div { flex: none; transform: rotate(-10.88deg); width: 282.731u; height: 510.801u; position: relative; }
-.about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Labels drift slowly along their ribbon; one grid step per cycle keeps the loop seamless. */
+.ribbon-track { position: absolute; inset: 0; will-change: transform; }
+.ribbon-track-a { animation: ribbon-drift-a 16s linear infinite; }
+.ribbon-track-b { animation: ribbon-drift-b 18s linear infinite; }
+@keyframes ribbon-drift-a { to { transform: translate(300.77u, 30.41u); } }
+@keyframes ribbon-drift-b { to { transform: translate(-298.03u, 50.66u); } }
+@media (prefers-reduced-motion: reduce) { .ribbon-track { animation: none; } }
+/* Flavour slider: every can is stacked and cross-fades; geometry comes from the Figma frame of each flavour. */
+.about-can { display: flex; position: absolute; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transform: translateX(24u) scale(.97); transition: opacity .6s ease, transform .6s ease; }
+.about-can.is-active { opacity: 1; pointer-events: auto; transform: none; }
+.about-can > div { flex: none; position: relative; }
+.about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.about-can-1 { left: 533u; top: 208.03u; width: 374.059u; height: 554.984u; }
+.about-can-1 > div { transform: rotate(-10.88deg); width: 282.731u; height: 510.801u; }
+.about-can-1 img { object-fit: cover; }
+.about-can-2 { left: 538u; top: 254u; width: 362.699u; height: 476.901u; }
+.about-can-2 > div { transform: rotate(-10.36deg); width: 289.754u; height: 431.826u; }
+.about-can-3 { left: 558u; top: 263u; width: 323.163u; height: 470.756u; }
+.about-can-3 > div { transform: rotate(-9.4deg); width: 255.572u; height: 434.854u; }
+.about-can-4 { left: 546.85u; top: 265.63u; width: 337.697u; height: 470.834u; }
+.about-can-4 > div { transform: rotate(-9.87deg); width: 267.718u; height: 431.323u; }
+
+.about-arrow { position: absolute; z-index: 3; top: 40%; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .9); box-shadow: 0 2px 10px rgba(5, 53, 136, .25); cursor: pointer; transition: transform .2s ease, background-color .2s ease; }
+.about-arrow svg { width: 22px; height: 22px; fill: none; stroke: var(--about-title, var(--navy)); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke .6s ease; }
+.about-arrow:hover { transform: scale(1.08); background: #fff; }
+.about-arrow:focus-visible, .about-dot:focus-visible { outline: 3px solid var(--about-title, var(--navy)); outline-offset: 3px; }
+.about-arrow-prev { left: 10px; }
+.about-arrow-next { right: 10px; }
+.about-dots { position: relative; z-index: 3; display: flex; justify-content: center; gap: 12px; margin: 14px 0 0; }
+.about-dot { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 2px solid var(--about-title, var(--navy)); background: transparent; cursor: pointer; transition: background-color .3s ease, transform .3s ease, border-color .6s ease; }
+.about-dot.is-active { background: var(--about-title, var(--navy)); transform: scale(1.2); }
+@media (prefers-reduced-motion: reduce) {
+  .about-can, .about-title, .ribbon-bar-a, .ribbon-bar-b, .about-num, .about-point h3, .about-btn, .about-dot, .about-arrow { transition: none; }
+}
 .about-points { margin: 36px auto 0; max-width: 620px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
-.about-num { display: block; font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--blue); }
+.about-num { display: block; font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--about-num, var(--blue)); transition: color .6s ease; }
 .about-rule { width: 100%; max-width: 134.6px; height: 1.4px; margin: 6px 0 8px; }
-.about-point h3 { font-weight: 600; font-size: 18px; line-height: 1.3; color: #21306a; }
+.about-point h3 { font-weight: 600; font-size: 18px; line-height: 1.3; color: var(--about-pt, #21306a); transition: color .6s ease; }
 .about-point p { margin-top: 6px; font-size: 15px; line-height: 1.2; letter-spacing: .02em; color: #000; }
-.about-btn { display: flex; align-items: center; justify-content: center; margin: 36px auto 0; width: 161px; height: 43px; border-radius: 4px; background: #008240; color: #fff; font-weight: 700; font-size: 16px; }
+.about-btn { display: flex; align-items: center; justify-content: center; margin: 36px auto 0; width: 161px; height: 43px; border-radius: 4px; background: var(--about-btn, #008240); color: #fff; font-weight: 700; font-size: 16px; transition: background-color .6s ease; }
 .strip-about { display: none; }
 
 /* ---------- Social ---------- */
@@ -354,6 +385,11 @@
   .about-rule { position: absolute; left: 0; top: 83.3u; width: 134.608u; max-width: none; height: 1.38u; margin: 0; }
   .about-point h3 { position: absolute; top: 104u; left: 0; font-size: 20u; line-height: 26u; white-space: nowrap; }
   .about-point p { position: absolute; top: 148u; left: 0; width: 212u; margin: 0; font-size: 16u; line-height: 18u; letter-spacing: .32u; }
+  .about-arrow { top: 440u; width: max(40px, 52u); height: max(40px, 52u); }
+  .about-arrow-prev { left: 70u; }
+  .about-arrow-next { right: 70u; }
+  .about-dots { position: absolute; left: 0; right: 0; top: 960u; margin: 0; gap: 14u; }
+  .about-dot { width: max(10px, 12u); height: max(10px, 12u); }
   .about-btn { position: absolute; left: 640u; top: 1006u; width: 161u; height: 43u; border-radius: 4u; font-size: 16u; margin: 0; }
   .strip-about { display: block; left: 50%; top: 1109.5u; width: 1542u; transform: translateX(-50%); }
 

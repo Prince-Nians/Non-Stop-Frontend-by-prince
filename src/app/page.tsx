@@ -18,7 +18,7 @@ export default async function Home() {
         <Hero section={home.sections.hero} />
         <Products section={home.sections.products} products={home.products} />
         <PartnerBand section={home.sections.partner} shops={home.shops} />
-        <About section={home.sections.about} points={home.about_points} />
+        <About section={home.sections.about} points={home.about_points} slides={home.about_slides ?? []} />
         <Social section={home.sections.social} photos={home.social_photos} />
         <Events section={home.sections.events} events={home.events} />
         <Blogs section={home.sections.blogs} posts={home.blogs} />

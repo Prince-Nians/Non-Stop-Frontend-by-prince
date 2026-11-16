@@ -32,6 +32,11 @@ export type Post = {
   featured?: boolean;
   published_at?: string;
 };
+export type AboutSlide = {
+  name: string;
+  can_image: string | null;
+  colors: { ribbon_a: string; ribbon_b: string; title: string; number: string; point_title: string; button: string };
+};
 export type EventItem = { title: string; slug: string; excerpt?: string; image?: string | null; published_at?: string };
 
 export type HomeContent = {
@@ -48,6 +53,7 @@ export type HomeContent = {
   shops: Shop[];
   sections: Record<string, Section>;
   products: Product[];
+  about_slides: AboutSlide[];
   about_points: { title: string; body: string | null }[];
   social_photos: { image: string | null; alt: string | null; url: string | null }[];
   events: EventItem[];

@@ -137,7 +137,7 @@
 
 /* ---------- About ---------- */
 .about { position: relative; padding: 48px 16px 64px; }
-.about-title { color: var(--navy); }
+.about-title { color: var(--about-title, var(--navy)); transition: color .6s ease; }
 .about-desc { margin: 12px auto 0; max-width: 680px; text-align: center; font-size: 14px; line-height: 1.7; letter-spacing: .02em; color: var(--ink); }
 /* About art: same Figma coordinates, shown in a cropped, scaled stage on phones/tablets */
 .about-art { position: relative; --u: calc(100cqw / 900); height: calc(545 * var(--u)); margin: 14px -16px 0; overflow: hidden; }
@@ -147,23 +147,54 @@
 .ribbon-a { left: calc(-93.5 * var(--u)); top: calc(331.64 * var(--u)); width: calc(1549.364 * var(--u)); height: calc(236.705 * var(--u)); }
 .ribbon-b { left: calc(-71.74 * var(--u)); top: calc(315.54 * var(--u)); width: calc(1540.763 * var(--u)); height: calc(339.739 * var(--u)); }
 .ribbon-bar { flex: none; width: calc(1549.042 * var(--u)); height: calc(81.309 * var(--u)); }
-.ribbon-bar-a { background: #0062a0; transform: rotate(5.77deg); }
-.ribbon-bar-b { background: #21306a; transform: rotate(-9.65deg); }
+.ribbon-bar-a { background: var(--about-a, #0062a0); transform: rotate(5.77deg); transition: background-color .6s ease; }
+.ribbon-bar-b { background: var(--about-b, #21306a); transform: rotate(-9.65deg); transition: background-color .6s ease; }
 .ribbon-txt { position: absolute; left: calc(var(--x) * var(--u)); top: calc(var(--y) * var(--u)); display: flex; align-items: center; justify-content: center; }
 .ribbon-txt p { flex: none; font-weight: 700; font-size: calc(34 * var(--u)); line-height: normal; color: #fff; width: calc(201.188 * var(--u)); height: calc(45.867 * var(--u)); white-space: nowrap; }
 .ribbon-txt-a { width: calc(204.781 * var(--u)); height: calc(65.87 * var(--u)); }
 .ribbon-txt-a p { transform: rotate(5.77deg); }
 .ribbon-txt-b { width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u)); }
 .ribbon-txt-b p { transform: rotate(-9.65deg); }
-.about-can { display: flex; position: absolute; left: calc(533 * var(--u)); top: calc(208.03 * var(--u)); width: calc(374.059 * var(--u)); height: calc(554.984 * var(--u)); align-items: center; justify-content: center; }
-.about-can > div { flex: none; transform: rotate(-10.88deg); width: calc(282.731 * var(--u)); height: calc(510.801 * var(--u)); position: relative; }
-.about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Labels drift slowly along their ribbon; one grid step per cycle keeps the loop seamless. */
+.ribbon-track { position: absolute; inset: 0; will-change: transform; }
+.ribbon-track-a { animation: ribbon-drift-a 16s linear infinite; }
+.ribbon-track-b { animation: ribbon-drift-b 18s linear infinite; }
+@keyframes ribbon-drift-a { to { transform: translate(calc(300.77 * var(--u)), calc(30.41 * var(--u))); } }
+@keyframes ribbon-drift-b { to { transform: translate(calc(-298.03 * var(--u)), calc(50.66 * var(--u))); } }
+@media (prefers-reduced-motion: reduce) { .ribbon-track { animation: none; } }
+/* Flavour slider: every can is stacked and cross-fades; geometry comes from the Figma frame of each flavour. */
+.about-can { display: flex; position: absolute; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transform: translateX(calc(24 * var(--u))) scale(.97); transition: opacity .6s ease, transform .6s ease; }
+.about-can.is-active { opacity: 1; pointer-events: auto; transform: none; }
+.about-can > div { flex: none; position: relative; }
+.about-can img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.about-can-1 { left: calc(533 * var(--u)); top: calc(208.03 * var(--u)); width: calc(374.059 * var(--u)); height: calc(554.984 * var(--u)); }
+.about-can-1 > div { transform: rotate(-10.88deg); width: calc(282.731 * var(--u)); height: calc(510.801 * var(--u)); }
+.about-can-1 img { object-fit: cover; }
+.about-can-2 { left: calc(538 * var(--u)); top: calc(254 * var(--u)); width: calc(362.699 * var(--u)); height: calc(476.901 * var(--u)); }
+.about-can-2 > div { transform: rotate(-10.36deg); width: calc(289.754 * var(--u)); height: calc(431.826 * var(--u)); }
+.about-can-3 { left: calc(558 * var(--u)); top: calc(263 * var(--u)); width: calc(323.163 * var(--u)); height: calc(470.756 * var(--u)); }
+.about-can-3 > div { transform: rotate(-9.4deg); width: calc(255.572 * var(--u)); height: calc(434.854 * var(--u)); }
+.about-can-4 { left: calc(546.85 * var(--u)); top: calc(265.63 * var(--u)); width: calc(337.697 * var(--u)); height: calc(470.834 * var(--u)); }
+.about-can-4 > div { transform: rotate(-9.87deg); width: calc(267.718 * var(--u)); height: calc(431.323 * var(--u)); }
+
+.about-arrow { position: absolute; z-index: 3; top: 40%; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .9); box-shadow: 0 2px 10px rgba(5, 53, 136, .25); cursor: pointer; transition: transform .2s ease, background-color .2s ease; }
+.about-arrow svg { width: 22px; height: 22px; fill: none; stroke: var(--about-title, var(--navy)); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke .6s ease; }
+.about-arrow:hover { transform: scale(1.08); background: #fff; }
+.about-arrow:focus-visible, .about-dot:focus-visible { outline: 3px solid var(--about-title, var(--navy)); outline-offset: 3px; }
+.about-arrow-prev { left: 10px; }
+.about-arrow-next { right: 10px; }
+.about-dots { position: relative; z-index: 3; display: flex; justify-content: center; gap: 12px; margin: 14px 0 0; }
+.about-dot { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 2px solid var(--about-title, var(--navy)); background: transparent; cursor: pointer; transition: background-color .3s ease, transform .3s ease, border-color .6s ease; }
+.about-dot.is-active { background: var(--about-title, var(--navy)); transform: scale(1.2); }
+@media (prefers-reduced-motion: reduce) {
+  .about-can, .about-title, .ribbon-bar-a, .ribbon-bar-b, .about-num, .about-point h3, .about-btn, .about-dot, .about-arrow { transition: none; }
+}
 .about-points { margin: 36px auto 0; max-width: 620px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
-.about-num { display: block; font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--blue); }
+.about-num { display: block; font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--about-num, var(--blue)); transition: color .6s ease; }
 .about-rule { width: 100%; max-width: 134.6px; height: 1.4px; margin: 6px 0 8px; }
-.about-point h3 { font-weight: 600; font-size: 18px; line-height: 1.3; color: #21306a; }
+.about-point h3 { font-weight: 600; font-size: 18px; line-height: 1.3; color: var(--about-pt, #21306a); transition: color .6s ease; }
 .about-point p { margin-top: 6px; font-size: 15px; line-height: 1.2; letter-spacing: .02em; color: #000; }
-.about-btn { display: flex; align-items: center; justify-content: center; margin: 36px auto 0; width: 161px; height: 43px; border-radius: 4px; background: #008240; color: #fff; font-weight: 700; font-size: 16px; }
+.about-btn { display: flex; align-items: center; justify-content: center; margin: 36px auto 0; width: 161px; height: 43px; border-radius: 4px; background: var(--about-btn, #008240); color: #fff; font-weight: 700; font-size: 16px; transition: background-color .6s ease; }
 .strip-about { display: none; }
 
 /* ---------- Social ---------- */
@@ -355,6 +386,11 @@
   .about-rule { position: absolute; left: 0; top: calc(83.3 * var(--u)); width: calc(134.608 * var(--u)); max-width: none; height: calc(1.38 * var(--u)); margin: 0; }
   .about-point h3 { position: absolute; top: calc(104 * var(--u)); left: 0; font-size: calc(20 * var(--u)); line-height: calc(26 * var(--u)); white-space: nowrap; }
   .about-point p { position: absolute; top: calc(148 * var(--u)); left: 0; width: calc(212 * var(--u)); margin: 0; font-size: calc(16 * var(--u)); line-height: calc(18 * var(--u)); letter-spacing: calc(.32 * var(--u)); }
+  .about-arrow { top: calc(440 * var(--u)); width: max(40px, calc(52 * var(--u))); height: max(40px, calc(52 * var(--u))); }
+  .about-arrow-prev { left: calc(70 * var(--u)); }
+  .about-arrow-next { right: calc(70 * var(--u)); }
+  .about-dots { position: absolute; left: 0; right: 0; top: calc(960 * var(--u)); margin: 0; gap: calc(14 * var(--u)); }
+  .about-dot { width: max(10px, calc(12 * var(--u))); height: max(10px, calc(12 * var(--u))); }
   .about-btn { position: absolute; left: calc(640 * var(--u)); top: calc(1006 * var(--u)); width: calc(161 * var(--u)); height: calc(43 * var(--u)); border-radius: calc(4 * var(--u)); font-size: calc(16 * var(--u)); margin: 0; }
   .strip-about { display: block; left: 50%; top: calc(1109.5 * var(--u)); width: calc(1542 * var(--u)); transform: translateX(-50%); }
 
