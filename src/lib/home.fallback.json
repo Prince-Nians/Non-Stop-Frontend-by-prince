@@ -14,7 +14,8 @@
     "seo": {
       "title": "NON STOP — Stay Nonstop",
       "description": null
-    }
+    },
+    "address": "Full Address"
   },
   "nav": {
     "header": [
@@ -244,6 +245,73 @@
         "contact_title": "Contact Us",
         "follow_title": "Follow us"
       }
+    },
+    "contact_hero": {
+      "title": "CONTACT US",
+      "subtitle": null,
+      "description": null,
+      "button": null,
+      "image": "/figma/contact-hero.png",
+      "image_secondary": null,
+      "extra": {}
+    },
+    "contact_info": {
+      "title": "CONTACT INFORMATION",
+      "subtitle": null,
+      "description": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Lacinia nulla sapien malesuada amet tortor cras ut sapien.",
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {
+        "email_label": "Email:",
+        "phone_label": "Phone number:",
+        "location_label": "Location:"
+      }
+    },
+    "contact_form": {
+      "title": "Contact form",
+      "subtitle": null,
+      "description": null,
+      "button": {
+        "label": "Submit Now",
+        "url": null
+      },
+      "image": null,
+      "image_secondary": null,
+      "extra": {
+        "name_placeholder": "Name",
+        "surname_placeholder": "Surname",
+        "email_placeholder": "Email ID*",
+        "phone_placeholder": "Phone Number*",
+        "message_placeholder": "Message",
+        "consent_text": "Lacinia nulla sapien malesuada amet tortor",
+        "sending_text": "Sending...",
+        "success_message": "Thank you! Your message has been sent. We will get back to you soon.",
+        "error_message": "Sorry, something went wrong. Please try again.",
+        "required_message": "Please fill in this field.",
+        "email_invalid_message": "Please enter a valid email address.",
+        "consent_message": "Please tick the box to continue."
+      }
+    },
+    "faq": {
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "subtitle": null,
+      "description": "A eleifend turpis sed orci est amet. Urna nulla ut nunc",
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {}
+    },
+    "marquee": {
+      "title": "Scrolling strip",
+      "subtitle": null,
+      "description": null,
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {
+        "phrases": "MAXIMUM EFFECT|NONSTOP ENERGY"
+      }
     }
   },
   "products": [
@@ -339,6 +407,10 @@
     },
     "strip_blogs": {
       "image": "/figma/checker-blogs.svg",
+      "alt": null
+    },
+    "faq_pattern": {
+      "image": "/figma/blogs-bg.png",
       "alt": null
     }
   },
@@ -589,6 +661,28 @@
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
       "published_at": "2026-11-08T09:15:35+00:00"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
+      "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
+    },
+    {
+      "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
+      "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
+    },
+    {
+      "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
+      "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
+    },
+    {
+      "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
+      "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
+    },
+    {
+      "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
+      "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
     }
   ]
 }

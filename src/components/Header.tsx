@@ -4,6 +4,7 @@ import { useState } from "react";
 import { shopLinkProps } from "@/lib/shops";
 import type { HomeContent, Link, Shop } from "@/lib/content";
 import { fmt, type Labels } from "@/lib/labels";
+import { navHref } from "@/lib/links";
 
 // Desktop x-positions (Figma design pixels) for the header menu items, in order.
 const NAV_X = [382, 452.5, 549.14, 665.83, 748.84, 823.88, 946.68];
@@ -26,7 +27,7 @@ export default function Header({
   return (
     <header className="hdr">
       <div className="hdr-canvas">
-        <a href="#top" className="hdr-logo" aria-label={labels.site_home}>
+        <a href="/" className="hdr-logo" aria-label={labels.site_home}>
           <img src={settings.logo ?? "/figma/logo.png"} alt={settings.site_name} />
         </a>
 
@@ -47,7 +48,7 @@ export default function Header({
           <ul>
             {nav.slice(0, NAV_X.length).map((item, i) => (
               <li key={item.label} style={{ "--x": NAV_X[i] } as React.CSSProperties}>
-                <a href={item.url} onClick={() => setOpen(false)}>
+                <a href={navHref(item.url)} onClick={() => setOpen(false)}>
                   {item.label}
                 </a>
                 {item.url === "#products" && <img className="hdr-chev" src="/figma/chevron-down.svg" alt="" />}

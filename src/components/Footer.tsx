@@ -1,5 +1,6 @@
 import type { HomeContent, Link } from "@/lib/content";
 import type { Labels } from "@/lib/labels";
+import { navHref } from "@/lib/links";
 
 const SOCIALS = [
   { name: "Facebook", key: "facebook", icon: "icon-facebook", cls: "fb" },
@@ -30,7 +31,7 @@ export default function Footer({
           <ul className="ftr-links">
             {footer.slice(0, 7).map((l, i) => (
               <li key={l.label} className={`l${i + 1}`}>
-                <a href={l.url}>{l.label}</a>
+                <a href={navHref(l.url)}>{l.label}</a>
               </li>
             ))}
           </ul>
@@ -70,7 +71,7 @@ export default function Footer({
           {legal.map((l, i) => (
             <span key={l.label} style={{ display: "contents" }}>
               {i > 0 && <span>|</span>}
-              <a href={l.url}>{l.label}</a>
+              <a href={navHref(l.url)}>{l.label}</a>
             </span>
           ))}
         </p>
