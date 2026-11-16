@@ -352,18 +352,45 @@
   "social_photos": [
     {
       "image": "/figma/social-photo-1.png",
-      "alt": "NON STOP community photo",
-      "url": null
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/reel/DeErd6szLeQ/",
+      "video": null
     },
     {
       "image": "/figma/social-photo-2.png",
-      "alt": "NON STOP community photo",
-      "url": null
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/reel/DftWkHOxShP/",
+      "video": null
     },
     {
       "image": "/figma/social-photo-3.png",
-      "alt": "NON STOP community photo",
-      "url": null
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/reel/Dfo-utkIKPn/",
+      "video": null
+    },
+    {
+      "image": null,
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/reel/DfPfpM-NNF3/",
+      "video": null
+    },
+    {
+      "image": null,
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/p/DfrwDMJsgFO/",
+      "video": null
+    },
+    {
+      "image": null,
+      "alt": "NON STOP on Instagram",
+      "url": null,
+      "instagram_url": "https://www.instagram.com/reel/DdWUksUFEAZ/",
+      "video": null
     }
   ],
   "events": [
@@ -371,19 +398,19 @@
       "title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus",
       "slug": "event-1",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T06:47:02+00:00"
+      "published_at": "2026-11-16T08:08:40+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-2",
       "image": "/figma/event-2.png",
-      "published_at": "2026-11-16T06:47:02+00:00"
+      "published_at": "2026-11-16T08:08:40+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-3",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T06:47:02+00:00"
+      "published_at": "2026-11-16T08:08:40+00:00"
     }
   ],
   "blogs": [
@@ -394,7 +421,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a",
       "image": "/figma/blog-main.png",
       "featured": true,
-      "published_at": "2026-11-16T06:47:03+00:00"
+      "published_at": "2026-11-16T08:08:40+00:00"
     },
     {
       "title": "Flavor & Product Launches",
@@ -403,7 +430,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-15T06:47:03+00:00"
+      "published_at": "2026-11-15T08:08:40+00:00"
     },
     {
       "title": "Market Trends",
@@ -412,7 +439,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-14T06:47:03+00:00"
+      "published_at": "2026-11-14T08:08:40+00:00"
     },
     {
       "title": "Health & Safety",
@@ -421,7 +448,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-13T06:47:03+00:00"
+      "published_at": "2026-11-13T08:08:41+00:00"
     },
     {
       "title": "Regional Guides",
@@ -430,7 +457,43 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-12T06:47:03+00:00"
+      "published_at": "2026-11-12T08:08:41+00:00"
+    },
+    {
+      "title": "Training & Performance",
+      "slug": "training-performance",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-11T08:08:41+00:00"
+    },
+    {
+      "title": "Hydration Guide",
+      "slug": "hydration-guide",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-10T08:08:41+00:00"
+    },
+    {
+      "title": "Recipes & Mixers",
+      "slug": "recipes-mixers",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-09T08:08:41+00:00"
+    },
+    {
+      "title": "Community Stories",
+      "slug": "community-stories",
+      "tag": "Blog",
+      "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
+      "thumbnail": "/figma/blog-thumb.png",
+      "featured": false,
+      "published_at": "2026-11-08T08:08:41+00:00"
     }
   ]
 }

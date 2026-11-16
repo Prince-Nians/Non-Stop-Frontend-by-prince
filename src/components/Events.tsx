@@ -1,7 +1,7 @@
 import type { EventItem, Section } from "@/lib/content";
 import { Lines } from "@/lib/format";
 
-// The Figma design has three event slots; only the first shows a caption over the photo.
+// The Figma design has three event slots. The first starts expanded; hovering another card expands that one instead.
 const SLOT_CLASS = ["ev-1", "ev-2", "ev-3"];
 
 export default function Events({ section, events }: { section: Section; events: EventItem[] }) {
@@ -20,8 +20,8 @@ export default function Events({ section, events }: { section: Section; events: 
             <li key={e.slug} className={`ev ${SLOT_CLASS[i]}`}>
               <a href="#events" aria-label={e.title}>
                 {e.image && <img className="ev-img" src={e.image} alt="" />}
-                {i === 0 && <span className="ev-fade" aria-hidden />}
-                {i === 0 && <span className="ev-text">{e.title}</span>}
+                <span className="ev-fade" aria-hidden />
+                <span className="ev-text">{e.title}</span>
                 <img className="ev-arrow" src="/figma/arrow-right.svg" alt="" aria-hidden />
               </a>
             </li>

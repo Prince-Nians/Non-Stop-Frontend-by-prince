@@ -1,11 +1,12 @@
 import type { Section } from "@/lib/content";
+import SocialPhotos from "./SocialPhotos";
 
 export default function Social({
   section,
   photos,
 }: {
   section: Section;
-  photos: { image: string | null; alt: string | null; url: string | null }[];
+  photos: { image: string | null; alt: string | null; url: string | null; instagram_url: string | null; video: string | null }[];
 }) {
   return (
     <section className="social" id="social" aria-labelledby="social-title">
@@ -16,18 +17,7 @@ export default function Social({
         </h2>
         <p className="social-desc">{section.description}</p>
 
-        <div className="social-photos">
-          {photos.slice(0, 3).map(
-            (p, i) =>
-              p.image && (
-                <div key={p.image} className={`sp sp-${i + 1}`}>
-                  <div>
-                    <img src={p.image} alt={p.alt ?? "NON STOP community photo"} />
-                  </div>
-                </div>
-              ),
-          )}
-        </div>
+        <SocialPhotos photos={photos} />
 
         <p className="social-copy">{section.extra.copy}</p>
         {section.button && (

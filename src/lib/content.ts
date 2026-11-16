@@ -64,7 +64,7 @@ export type HomeContent = {
   hero_slides: HeroSlide[];
   about_slides: AboutSlide[];
   about_points: { title: string; body: string | null }[];
-  social_photos: { image: string | null; alt: string | null; url: string | null }[];
+  social_photos: { image: string | null; alt: string | null; url: string | null; instagram_url: string | null; video: string | null }[];
   events: EventItem[];
   blogs: Post[];
 };

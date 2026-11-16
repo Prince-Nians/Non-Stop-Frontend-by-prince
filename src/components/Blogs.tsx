@@ -3,7 +3,8 @@ import { Lines, formatDate } from "@/lib/format";
 
 export default function Blogs({ section, posts }: { section: Section; posts: Post[] }) {
   const main = posts.find((p) => p.featured) ?? posts[0];
-  const rest = posts.filter((p) => p !== main).slice(0, 4);
+  // Every other post is listed; the list scrolls once there are more than four.
+  const rest = posts.filter((p) => p !== main);
 
   return (
     <section className="blogs" id="blogs" aria-labelledby="blogs-title">
@@ -25,7 +26,7 @@ export default function Blogs({ section, posts }: { section: Section; posts: Pos
 
         <ul className="blog-list">
           {rest.map((p, i) => (
-            <li key={p.slug} className={`blog-row blog-row-${i + 1}`}>
+            <li key={p.slug} className={`blog-row blog-row-${i + 1}`} style={{ "--i": i } as React.CSSProperties}>
               <a href="#blogs">
                 <span className="blog-thumb">{p.thumbnail && <img src={p.thumbnail} alt="" />}</span>
                 <span className="blog-tag">{p.tag ?? "Blog"}</span>

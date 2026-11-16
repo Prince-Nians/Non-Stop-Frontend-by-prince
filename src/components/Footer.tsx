@@ -4,7 +4,7 @@ const SOCIALS = [
   { name: "Facebook", key: "facebook", icon: "icon-facebook", cls: "fb" },
   { name: "YouTube", key: "youtube", icon: "icon-youtube", cls: "yt" },
   { name: "LinkedIn", key: "linkedin", icon: "icon-linkedin", cls: "in" },
-  { name: "Twitter", key: "twitter", icon: "icon-twitter", cls: "tw" },
+  { name: "X", key: "twitter", icon: "icon-x", cls: "tw" },
 ] as const;
 
 export default function Footer({
