@@ -247,6 +247,40 @@
       }
     }
   ],
+  "hero_slides": [
+    {
+      "kind": "stadium",
+      "name": "Stadium",
+      "image": null,
+      "mobile_image": null,
+      "alt": null,
+      "url": null
+    },
+    {
+      "kind": "banner",
+      "name": "Jungle",
+      "image": "/figma/hero-banner-jungle.png",
+      "mobile_image": null,
+      "alt": "STAY NONSTOP — NON STOP Jungle",
+      "url": null
+    },
+    {
+      "kind": "banner",
+      "name": "Boost",
+      "image": "/figma/hero-banner-boost.png",
+      "mobile_image": null,
+      "alt": "STAY NONSTOP — NON STOP Boost",
+      "url": null
+    },
+    {
+      "kind": "banner",
+      "name": "Zero Sugar",
+      "image": "/figma/hero-banner-zero.png",
+      "mobile_image": null,
+      "alt": "STAY NONSTOP — NON STOP Classic Zero Sugar",
+      "url": null
+    }
+  ],
   "about_slides": [
     {
       "name": "Classic",
@@ -337,19 +371,19 @@
       "title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus",
       "slug": "event-1",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T06:12:57+00:00"
+      "published_at": "2026-11-16T06:47:02+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-2",
       "image": "/figma/event-2.png",
-      "published_at": "2026-11-16T06:12:57+00:00"
+      "published_at": "2026-11-16T06:47:02+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-3",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T06:12:57+00:00"
+      "published_at": "2026-11-16T06:47:02+00:00"
     }
   ],
   "blogs": [
@@ -360,7 +394,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a",
       "image": "/figma/blog-main.png",
       "featured": true,
-      "published_at": "2026-11-16T06:12:57+00:00"
+      "published_at": "2026-11-16T06:47:03+00:00"
     },
     {
       "title": "Flavor & Product Launches",
@@ -369,7 +403,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-15T06:12:57+00:00"
+      "published_at": "2026-11-15T06:47:03+00:00"
     },
     {
       "title": "Market Trends",
@@ -378,7 +412,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-14T06:12:58+00:00"
+      "published_at": "2026-11-14T06:47:03+00:00"
     },
     {
       "title": "Health & Safety",
@@ -387,7 +421,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-13T06:12:58+00:00"
+      "published_at": "2026-11-13T06:47:03+00:00"
     },
     {
       "title": "Regional Guides",
@@ -396,7 +430,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-12T06:12:58+00:00"
+      "published_at": "2026-11-12T06:47:03+00:00"
     }
   ]
 }

@@ -1,11 +1,11 @@
-import type { Section } from "@/lib/content";
+import type { HeroSlide, Section } from "@/lib/content";
+import HeroSlider from "./HeroSlider";
 
-export default function Hero({ section }: { section?: Section }) {
-  return (
-    <section className="hero" aria-label={section?.title ?? "Stay Nonstop"}>
+export default function Hero({ section, slides }: { section?: Section; slides: HeroSlide[] }) {
+  const stadium = (
+    <>
       <img className="hero-bg" src={section?.image ?? "/figma/hero-bg.png"} alt="" />
       <div className="hero-canvas">
-        <h1 className="sr-only">{section?.title ?? "Stay Nonstop"}</h1>
         <img className="hero-title" src={section?.image_secondary ?? "/figma/hero-title.svg"} alt="" aria-hidden />
 
         {/* left cluster */}
@@ -54,7 +54,8 @@ export default function Hero({ section }: { section?: Section }) {
           </div>
         </div>
       </div>
-      <img className="strip strip-hero" src="/figma/checker-products.svg" alt="" aria-hidden />
-    </section>
+    </>
   );
+
+  return <HeroSlider slides={slides} title={section?.title ?? "Stay Nonstop"} stadium={stadium} />;
 }

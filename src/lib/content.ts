@@ -32,6 +32,14 @@ export type Post = {
   featured?: boolean;
   published_at?: string;
 };
+export type HeroSlide = {
+  kind: "banner" | "stadium";
+  name: string;
+  image: string | null;
+  mobile_image: string | null;
+  alt: string | null;
+  url: string | null;
+};
 export type AboutSlide = {
   name: string;
   can_image: string | null;
@@ -53,6 +61,7 @@ export type HomeContent = {
   shops: Shop[];
   sections: Record<string, Section>;
   products: Product[];
+  hero_slides: HeroSlide[];
   about_slides: AboutSlide[];
   about_points: { title: string; body: string | null }[];
   social_photos: { image: string | null; alt: string | null; url: string | null }[];

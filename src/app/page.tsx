@@ -15,7 +15,7 @@ export default async function Home() {
     <div className="page" id="top">
       <Header settings={home.settings} nav={home.nav.header} shops={home.shops} />
       <main>
-        <Hero section={home.sections.hero} />
+        <Hero section={home.sections.hero} slides={home.hero_slides ?? []} />
         <Products section={home.sections.products} products={home.products} />
         <PartnerBand section={home.sections.partner} shops={home.shops} />
         <About section={home.sections.about} points={home.about_points} slides={home.about_slides ?? []} />
