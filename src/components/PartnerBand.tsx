@@ -1,11 +1,23 @@
 import { shopLinkProps } from "@/lib/shops";
 import type { Section, Shop } from "@/lib/content";
+import { assetSrc, type Assets } from "@/lib/assets";
+import { fmt, type Labels } from "@/lib/labels";
 
 const SHOP_CLASS: Record<string, string> = { jiomart: "band-shop-jio", zepto: "band-shop-zepto", blinkit: "band-shop-blinkit" };
 
-export default function PartnerBand({ section, shops }: { section: Section; shops: Shop[] }) {
+export default function PartnerBand({
+  section,
+  shops,
+  assets,
+  labels,
+}: {
+  section: Section;
+  shops: Shop[];
+  assets?: Assets;
+  labels: Labels;
+}) {
   return (
-    <section className="band" id="partner" aria-label="Buy now and partner program">
+    <section className="band" id="partner" aria-label={labels.buy_and_partner}>
       <div className="px-clip">
         <img className="band-bg" src={section.image ?? "/figma/products-bg.png"} alt="" />
       </div>
@@ -20,7 +32,7 @@ export default function PartnerBand({ section, shops }: { section: Section; shop
               .filter((shop) => SHOP_CLASS[shop.slug])
               .map((shop) => (
                 <li key={shop.slug} className={`band-shop ${SHOP_CLASS[shop.slug]}`}>
-                  <a href={shop.url} {...shopLinkProps} aria-label={`Buy on ${shop.name}`}>
+                  <a href={shop.url} {...shopLinkProps} aria-label={fmt(labels.buy_on, { name: shop.name })}>
                     {shop.logo && <img src={shop.logo} alt="" />}
                   </a>
                 </li>
@@ -43,7 +55,7 @@ export default function PartnerBand({ section, shops }: { section: Section; shop
           )}
         </div>
       </div>
-      <img className="strip strip-band" src="/figma/checker-products.svg" alt="" aria-hidden />
+      <img className="strip strip-band" src={assetSrc(assets, "strip_band")} alt="" aria-hidden />
     </section>
   );
 }

@@ -61,6 +61,7 @@ export type HomeContent = {
   shops: Shop[];
   sections: Record<string, Section>;
   products: Product[];
+  assets?: Record<string, { image: string | null; alt: string | null }>;
   hero_slides: HeroSlide[];
   about_slides: AboutSlide[];
   about_points: { title: string; body: string | null }[];

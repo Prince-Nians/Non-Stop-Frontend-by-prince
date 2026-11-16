@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { AboutSlide, Section } from "@/lib/content";
+import { assetSrc, type Assets } from "@/lib/assets";
+import { fmt, type Labels } from "@/lib/labels";
 
 // The "NON STOP" labels sit on an even grid along each ribbon and glide slowly along it (see .ribbon-track).
 // One extra label on each side lets the loop restart without a visible jump.
@@ -32,11 +34,16 @@ export default function About({
   section,
   points,
   slides,
+  assets,
+  labels,
 }: {
   section: Section;
   points: { title: string; body: string | null }[];
   slides: AboutSlide[];
+  assets?: Assets;
+  labels: Labels;
 }) {
+  const ribbonText = section.extra?.ribbon_text || "NON STOP";
   // The Figma has room for four flavours; each has its own can placement.
   const list: AboutSlide[] = slides.length
     ? slides.slice(0, 4)
@@ -96,7 +103,7 @@ export default function About({
           className="about-art"
           role="group"
           aria-roledescription="carousel"
-          aria-label="NON STOP flavours"
+          aria-label={labels.flavours}
           onKeyDown={(e) => {
             if (e.key === "ArrowLeft") go(index - 1);
             if (e.key === "ArrowRight") go(index + 1);
@@ -121,7 +128,7 @@ export default function About({
                     className="ribbon-txt ribbon-txt-a"
                     style={{ "--x": t.x, "--y": t.y - TOP } as React.CSSProperties}
                   >
-                    <p>NON STOP</p>
+                    <p>{ribbonText}</p>
                   </div>
                 ))}
               </div>
@@ -135,7 +142,7 @@ export default function About({
                     className="ribbon-txt ribbon-txt-b"
                     style={{ "--x": t.x, "--y": t.y - TOP, "--w": t.w, "--h": t.h } as React.CSSProperties}
                   >
-                    <p>NON STOP</p>
+                    <p>{ribbonText}</p>
                   </div>
                 ))}
               </div>
@@ -147,7 +154,7 @@ export default function About({
                 className={`about-can about-can-${n + 1}${n === index ? " is-active" : ""}`}
                 role="group"
                 aria-roledescription="slide"
-                aria-label={`${n + 1} of ${count}: ${s.name}`}
+                aria-label={fmt(labels.slide_of, { n: n + 1, count, name: s.name })}
                 aria-hidden={n !== index}
               >
                 <div>{s.can_image && <img src={s.can_image} alt={`NON STOP ${s.name} can`} />}</div>
@@ -157,12 +164,12 @@ export default function About({
 
           {count > 1 && (
             <>
-              <button type="button" className="about-arrow about-arrow-prev" aria-label="Previous flavour" onClick={() => go(index - 1)}>
+              <button type="button" className="about-arrow about-arrow-prev" aria-label={labels.previous_flavour} onClick={() => go(index - 1)}>
                 <svg viewBox="0 0 24 24" aria-hidden>
                   <path d="M15 5l-7 7 7 7" />
                 </svg>
               </button>
-              <button type="button" className="about-arrow about-arrow-next" aria-label="Next flavour" onClick={() => go(index + 1)}>
+              <button type="button" className="about-arrow about-arrow-next" aria-label={labels.next_flavour} onClick={() => go(index + 1)}>
                 <svg viewBox="0 0 24 24" aria-hidden>
                   <path d="M9 5l7 7-7 7" />
                 </svg>
@@ -172,13 +179,13 @@ export default function About({
         </div>
 
         {count > 1 && (
-          <div className="about-dots" role="group" aria-label="Choose flavour">
+          <div className="about-dots" role="group" aria-label={labels.choose_flavour}>
             {list.map((s, n) => (
               <button
                 key={s.name}
                 type="button"
                 className={`about-dot${n === index ? " is-active" : ""}`}
-                aria-label={`Show ${s.name}`}
+                aria-label={fmt(labels.show_flavour, { name: s.name })}
                 aria-current={n === index}
                 onClick={() => go(n)}
               />
@@ -186,7 +193,7 @@ export default function About({
           </div>
         )}
         <p className="sr-only" aria-live="polite">
-          {autoplay ? "" : `Showing ${list[index].name}`}
+          {autoplay ? "" : fmt(labels.showing_flavour, { name: list[index].name })}
         </p>
 
         <ol className="about-points">
@@ -206,7 +213,7 @@ export default function About({
           </a>
         )}
       </div>
-      <img className="strip strip-about" src="/figma/checker-social.svg" alt="" aria-hidden />
+      <img className="strip strip-about" src={assetSrc(assets, "strip_about")} alt="" aria-hidden />
     </section>
   );
 }

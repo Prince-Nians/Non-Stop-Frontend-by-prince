@@ -1,10 +1,13 @@
 import type { Section } from "@/lib/content";
+import type { Labels } from "@/lib/labels";
 import SocialPhotos from "./SocialPhotos";
 
 export default function Social({
   section,
   photos,
+  labels,
 }: {
+  labels: Labels;
   section: Section;
   photos: { image: string | null; alt: string | null; url: string | null; instagram_url: string | null; video: string | null }[];
 }) {
@@ -19,7 +22,7 @@ export default function Social({
         </h2>
         <p className="social-desc">{section.description}</p>
 
-        <SocialPhotos photos={photos} />
+        <SocialPhotos photos={photos} labels={labels} />
 
         <p className="social-copy">{section.extra.copy}</p>
         {section.button && (

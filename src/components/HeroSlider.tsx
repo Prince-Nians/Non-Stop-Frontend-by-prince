@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import type { HeroSlide } from "@/lib/content";
+import { fmt, type Labels } from "@/lib/labels";
 
 const AUTOPLAY_MS = 3500;
 
@@ -13,10 +14,14 @@ export default function HeroSlider({
   slides,
   title,
   stadium,
+  stripSrc,
+  labels,
 }: {
   slides: HeroSlide[];
   title: string;
   stadium: ReactNode;
+  stripSrc: string;
+  labels: Labels;
 }) {
   // With no slides from the CMS, show the stadium artwork alone.
   const list: HeroSlide[] = slides.length
@@ -90,7 +95,7 @@ export default function HeroSlider({
             className={`hero-slide hero-slide-${s.kind}${active ? " is-active" : ""}`}
             role="group"
             aria-roledescription="slide"
-            aria-label={`${n + 1} of ${count}: ${s.name}`}
+            aria-label={fmt(labels.slide_of, { n: n + 1, count, name: s.name })}
             aria-hidden={!active}
           >
             {s.kind === "stadium" ? stadium : s.url ? <a href={s.url} tabIndex={active ? 0 : -1}>{img}</a> : img}
@@ -100,23 +105,23 @@ export default function HeroSlider({
 
       {count > 1 && (
         <>
-          <button type="button" className="hero-arrow hero-arrow-prev" aria-label="Previous slide" onClick={() => go(index - 1)}>
+          <button type="button" className="hero-arrow hero-arrow-prev" aria-label={labels.previous_slide} onClick={() => go(index - 1)}>
             <svg viewBox="0 0 24 24" aria-hidden>
               <path d="M15 5l-7 7 7 7" />
             </svg>
           </button>
-          <button type="button" className="hero-arrow hero-arrow-next" aria-label="Next slide" onClick={() => go(index + 1)}>
+          <button type="button" className="hero-arrow hero-arrow-next" aria-label={labels.next_slide} onClick={() => go(index + 1)}>
             <svg viewBox="0 0 24 24" aria-hidden>
               <path d="M9 5l7 7-7 7" />
             </svg>
           </button>
-          <div className="hero-dots" role="group" aria-label="Choose slide">
+          <div className="hero-dots" role="group" aria-label={labels.choose_slide}>
             {list.map((s, n) => (
               <button
                 key={`${s.name}-${n}`}
                 type="button"
                 className={`hero-dot${n === index ? " is-active" : ""}`}
-                aria-label={`Show ${s.name}`}
+                aria-label={fmt(labels.show_slide, { name: s.name })}
                 aria-current={n === index}
                 onClick={() => go(n)}
               />
@@ -125,10 +130,10 @@ export default function HeroSlider({
         </>
       )}
       <p className="sr-only" aria-live="polite">
-        {autoplay ? "" : `Showing slide ${index + 1} of ${count}: ${list[index].name}`}
+        {autoplay ? "" : fmt(labels.showing_slide, { n: index + 1, count, name: list[index].name })}
       </p>
 
-      <img className="strip strip-hero" src="/figma/checker-products.svg" alt="" aria-hidden />
+      <img className="strip strip-hero" src={stripSrc} alt="" aria-hidden />
     </section>
   );
 }

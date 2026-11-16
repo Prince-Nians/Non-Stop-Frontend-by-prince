@@ -1,7 +1,8 @@
 import type { Post, Section } from "@/lib/content";
+import { assetSrc, type Assets } from "@/lib/assets";
 import { Lines, formatDate } from "@/lib/format";
 
-export default function Blogs({ section, posts }: { section: Section; posts: Post[] }) {
+export default function Blogs({ section, posts, assets }: { section: Section; posts: Post[]; assets?: Assets }) {
   const main = posts.find((p) => p.featured) ?? posts[0];
   // Every other post is listed; the list scrolls once there are more than four.
   const rest = posts.filter((p) => p !== main);
@@ -42,7 +43,7 @@ export default function Blogs({ section, posts }: { section: Section; posts: Pos
           ))}
         </ul>
       </div>
-      <img className="strip strip-blogs" src="/figma/checker-blogs.svg" alt="" aria-hidden />
+      <img className="strip strip-blogs" src={assetSrc(assets, "strip_blogs")} alt="" aria-hidden />
     </section>
   );
 }

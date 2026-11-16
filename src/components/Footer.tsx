@@ -1,4 +1,5 @@
 import type { HomeContent, Link } from "@/lib/content";
+import type { Labels } from "@/lib/labels";
 
 const SOCIALS = [
   { name: "Facebook", key: "facebook", icon: "icon-facebook", cls: "fb" },
@@ -11,16 +12,20 @@ export default function Footer({
   settings,
   footer,
   legal,
+  texts,
+  labels,
 }: {
   settings: HomeContent["settings"];
   footer: Link[];
   legal: Link[];
+  texts?: Record<string, string>;
+  labels: Labels;
 }) {
   return (
     <footer className="ftr" id="contact">
       <div className="ftr-canvas">
-        <nav className="ftr-quick" aria-label="Quick links">
-          <h2 className="ftr-h">Quick Links</h2>
+        <nav className="ftr-quick" aria-label={labels.quick_links_nav}>
+          <h2 className="ftr-h">{texts?.quick_links_title ?? "Quick Links"}</h2>
           <i className="ftr-accent" />
           <ul className="ftr-links">
             {footer.slice(0, 7).map((l, i) => (
@@ -32,7 +37,7 @@ export default function Footer({
         </nav>
 
         <div className="ftr-contact">
-          <h2 className="ftr-h">Contact Us</h2>
+          <h2 className="ftr-h">{texts?.contact_title ?? "Contact Us"}</h2>
           <i className="ftr-accent" />
           <p className="ftr-c ftr-c-phone">
             <img src="/figma/icon-phone.svg" alt="" aria-hidden />
@@ -45,7 +50,7 @@ export default function Footer({
         </div>
 
         <div className="ftr-follow">
-          <h2 className="ftr-h ftr-h-sm">Follow us</h2>
+          <h2 className="ftr-h ftr-h-sm">{texts?.follow_title ?? "Follow us"}</h2>
           <i className="ftr-accent" />
           <ul className="ftr-social">
             {SOCIALS.map((s) => (

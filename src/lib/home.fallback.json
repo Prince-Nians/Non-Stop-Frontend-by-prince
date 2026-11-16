@@ -136,18 +136,6 @@
         "buy_now_title": "BUY NOW"
       }
     },
-    "about": {
-      "title": "About Us",
-      "subtitle": null,
-      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-      "button": {
-        "label": "Become a Partner",
-        "url": "#partner"
-      },
-      "image": "/figma/about-can.png",
-      "image_secondary": null,
-      "extra": {}
-    },
     "social": {
       "title": "Social Media Handle",
       "subtitle": null,
@@ -160,6 +148,44 @@
       "image_secondary": null,
       "extra": {
         "copy": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi pellentesque adipiscing venenatis faucibus nisi"
+      }
+    },
+    "labels": {
+      "title": "Accessibility labels",
+      "subtitle": null,
+      "description": "Text read aloud by screen readers and shown as tooltips. {name}, {n}, {count} and {alt} are filled in automatically.",
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {
+        "site_home": "NON STOP home",
+        "main_menu": "Main",
+        "buy_online": "Buy online",
+        "buy_on": "Buy on {name}",
+        "buy_and_partner": "Buy now and partner program",
+        "open_menu": "Open menu",
+        "close_menu": "Close menu",
+        "quick_links_nav": "Quick links",
+        "previous_slide": "Previous slide",
+        "next_slide": "Next slide",
+        "choose_slide": "Choose slide",
+        "show_slide": "Show {name}",
+        "slide_of": "{n} of {count}: {name}",
+        "showing_slide": "Showing slide {n} of {count}: {name}",
+        "flavours": "NON STOP flavours",
+        "previous_flavour": "Previous flavour",
+        "next_flavour": "Next flavour",
+        "choose_flavour": "Choose flavour",
+        "show_flavour": "Show {name}",
+        "showing_flavour": "Showing {name}",
+        "close": "Close",
+        "previous": "Previous",
+        "next": "Next",
+        "open_larger": "Open larger: {alt}",
+        "view_on_instagram": "View on Instagram",
+        "view_original": "View original",
+        "sound_on": "Turn sound on",
+        "sound_off": "Turn sound off"
       }
     },
     "events": {
@@ -191,6 +217,33 @@
       "image": null,
       "image_secondary": null,
       "extra": {}
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": null,
+      "description": "consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "button": {
+        "label": "Become a Partner",
+        "url": "#partner"
+      },
+      "image": "/figma/about-can.png",
+      "image_secondary": null,
+      "extra": {
+        "ribbon_text": "NON STOP"
+      }
+    },
+    "footer": {
+      "title": "Footer",
+      "subtitle": null,
+      "description": null,
+      "button": null,
+      "image": null,
+      "image_secondary": null,
+      "extra": {
+        "quick_links_title": "Quick Links",
+        "contact_title": "Contact Us",
+        "follow_title": "Follow us"
+      }
     }
   },
   "products": [
@@ -247,6 +300,48 @@
       }
     }
   ],
+  "assets": {
+    "hero_can_classic": {
+      "image": "/figma/hero-can-classic-fit.png",
+      "alt": "NON STOP Classic can"
+    },
+    "hero_can_jungle": {
+      "image": "/figma/hero-can-jungle.png",
+      "alt": "NON STOP Jungle can"
+    },
+    "hero_can_zero": {
+      "image": "/figma/hero-can-zero-fit.png",
+      "alt": "NON STOP Classic Zero Sugar can"
+    },
+    "hero_can_boost": {
+      "image": "/figma/hero-can-boost-fit.png",
+      "alt": "NON STOP Boost can"
+    },
+    "hero_ellipse_left": {
+      "image": "/figma/hero-ellipse-l.svg",
+      "alt": null
+    },
+    "hero_ellipse_right": {
+      "image": "/figma/hero-ellipse-r.svg",
+      "alt": null
+    },
+    "strip_hero": {
+      "image": "/figma/checker-products.svg",
+      "alt": null
+    },
+    "strip_band": {
+      "image": "/figma/checker-products.svg",
+      "alt": null
+    },
+    "strip_about": {
+      "image": "/figma/checker-social.svg",
+      "alt": null
+    },
+    "strip_blogs": {
+      "image": "/figma/checker-blogs.svg",
+      "alt": null
+    }
+  },
   "hero_slides": [
     {
       "kind": "stadium",
@@ -398,19 +493,19 @@
       "title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus",
       "slug": "event-1",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T08:08:40+00:00"
+      "published_at": "2026-11-16T09:15:34+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-2",
       "image": "/figma/event-2.png",
-      "published_at": "2026-11-16T08:08:40+00:00"
+      "published_at": "2026-11-16T09:15:34+00:00"
     },
     {
       "title": "Upcoming event",
       "slug": "event-3",
       "image": "/figma/event-1.png",
-      "published_at": "2026-11-16T08:08:40+00:00"
+      "published_at": "2026-11-16T09:15:34+00:00"
     }
   ],
   "blogs": [
@@ -421,7 +516,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a",
       "image": "/figma/blog-main.png",
       "featured": true,
-      "published_at": "2026-11-16T08:08:40+00:00"
+      "published_at": "2026-11-16T09:15:35+00:00"
     },
     {
       "title": "Flavor & Product Launches",
@@ -430,7 +525,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-15T08:08:40+00:00"
+      "published_at": "2026-11-15T09:15:35+00:00"
     },
     {
       "title": "Market Trends",
@@ -439,7 +534,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-14T08:08:40+00:00"
+      "published_at": "2026-11-14T09:15:35+00:00"
     },
     {
       "title": "Health & Safety",
@@ -448,7 +543,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-13T08:08:41+00:00"
+      "published_at": "2026-11-13T09:15:35+00:00"
     },
     {
       "title": "Regional Guides",
@@ -457,7 +552,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-12T08:08:41+00:00"
+      "published_at": "2026-11-12T09:15:35+00:00"
     },
     {
       "title": "Training & Performance",
@@ -466,7 +561,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-11T08:08:41+00:00"
+      "published_at": "2026-11-11T09:15:35+00:00"
     },
     {
       "title": "Hydration Guide",
@@ -475,7 +570,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-10T08:08:41+00:00"
+      "published_at": "2026-11-10T09:15:35+00:00"
     },
     {
       "title": "Recipes & Mixers",
@@ -484,7 +579,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-09T08:08:41+00:00"
+      "published_at": "2026-11-09T09:15:35+00:00"
     },
     {
       "title": "Community Stories",
@@ -493,7 +588,7 @@
       "excerpt": "Lorem ipsum dolor sit amet consectetur. A eleifend turpis sed orci\nest amet. Urna nulla ut nunc in fusce a.",
       "thumbnail": "/figma/blog-thumb.png",
       "featured": false,
-      "published_at": "2026-11-08T08:08:41+00:00"
+      "published_at": "2026-11-08T09:15:35+00:00"
     }
   ]
 }
