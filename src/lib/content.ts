@@ -79,13 +79,13 @@ const FALLBACK = fallback as unknown as HomeContent;
 export async function getHome(): Promise<HomeContent> {
   "use cache";
   cacheTag("home");
-  cacheLife("minutes");
+  cacheLife("hours"); // the CMS refreshes this immediately on every change (see /api/revalidate)
 
   const base = process.env.CMS_API_URL;
   if (!base) return FALLBACK;
 
   try {
-    const res = await fetch(`${base.replace(/\/$/, "")}/home`, { signal: AbortSignal.timeout(5000) });
+    const res = await fetch(`${base.replace(/\/$/, "")}/home`, { signal: AbortSignal.timeout(20000) });
     if (!res.ok) throw new Error(`CMS responded ${res.status}`);
     const json = (await res.json()) as { data: HomeContent };
     return json.data;
