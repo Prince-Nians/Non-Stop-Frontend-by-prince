@@ -8,7 +8,9 @@ export default function Blogs({ section, posts }: { section: Section; posts: Pos
 
   return (
     <section className="blogs" id="blogs" aria-labelledby="blogs-title">
-      <img className="blogs-bg" src={section.image ?? "/figma/blogs-bg.png"} alt="" />
+      <div className="px-clip">
+        <img className="blogs-bg" src={section.image ?? "/figma/blogs-bg.png"} alt="" />
+      </div>
       <div className="blogs-canvas">
         <h2 id="blogs-title" className="sec-title blogs-title">
           {section.title}

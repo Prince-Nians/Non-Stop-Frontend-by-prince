@@ -6,7 +6,9 @@ const SHOP_CLASS: Record<string, string> = { jiomart: "band-shop-jio", zepto: "b
 export default function PartnerBand({ section, shops }: { section: Section; shops: Shop[] }) {
   return (
     <section className="band" id="partner" aria-label="Buy now and partner program">
-      <img className="band-bg" src={section.image ?? "/figma/products-bg.png"} alt="" />
+      <div className="px-clip">
+        <img className="band-bg" src={section.image ?? "/figma/products-bg.png"} alt="" />
+      </div>
       <div className="band-canvas">
         <div className="band-col band-buy">
           <div className="band-frame band-frame-l">

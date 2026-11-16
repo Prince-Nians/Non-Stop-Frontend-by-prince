@@ -655,3 +655,7 @@ html:has(.sp-modal[open]) { overflow: hidden; }
 .sp-sound .sp-sound-body { fill: #fff; stroke: #fff; stroke-width: 1.2; }
 .sp-sound:hover { background: rgba(0, 0, 0, .8); transform: scale(1.08); }
 .sp-sound:focus-visible { outline: 3px solid #a6def5; outline-offset: 2px; }
+
+/* Parallax support: only the drifting background layer is clipped (never the section's own content). */
+.px-clip { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.band-bg, .social-bg, .blogs-bg { will-change: translate; }

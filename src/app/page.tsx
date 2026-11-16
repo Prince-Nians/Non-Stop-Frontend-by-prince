@@ -8,6 +8,7 @@ import Social from "@/components/Social";
 import Events from "@/components/Events";
 import Blogs from "@/components/Blogs";
 import Footer from "@/components/Footer";
+import ParallaxScroll from "@/components/ParallaxScroll";
 
 export default async function Home() {
   const home = await getHome();
@@ -23,6 +24,7 @@ export default async function Home() {
         <Events section={home.sections.events} events={home.events} />
         <Blogs section={home.sections.blogs} posts={home.blogs} />
       </main>
+      <ParallaxScroll />
       <Footer settings={home.settings} footer={home.nav.footer} legal={home.nav.legal} />
     </div>
   );

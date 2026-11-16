@@ -10,7 +10,9 @@ export default function Social({
 }) {
   return (
     <section className="social" id="social" aria-labelledby="social-title">
-      <img className="social-bg" src={section.image ?? "/figma/social-bg.png"} alt="" />
+      <div className="px-clip">
+        <img className="social-bg" src={section.image ?? "/figma/social-bg.png"} alt="" />
+      </div>
       <div className="social-canvas">
         <h2 id="social-title" className="sec-title social-title">
           {section.title}
