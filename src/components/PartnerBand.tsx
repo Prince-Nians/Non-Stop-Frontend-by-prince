@@ -38,7 +38,6 @@ export default function PartnerBand({
                 </li>
               ))}
           </ul>
-          <img className="band-vec" src="/figma/partner-vec-3.svg" alt="" aria-hidden />
         </div>
 
         <div className="band-col band-partner">

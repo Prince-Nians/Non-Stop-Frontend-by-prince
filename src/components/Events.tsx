@@ -1,8 +1,6 @@
 import type { EventItem, Section } from "@/lib/content";
+import EventList from "./EventList";
 import { Lines } from "@/lib/format";
-
-// The Figma design has three event slots. The first starts expanded; hovering another card expands that one instead.
-const SLOT_CLASS = ["ev-1", "ev-2", "ev-3"];
 
 export default function Events({ section, events }: { section: Section; events: EventItem[] }) {
   return (
@@ -15,18 +13,7 @@ export default function Events({ section, events }: { section: Section; events: 
           <Lines text={section.description} />
         </p>
 
-        <ul className="ev-list">
-          {events.slice(0, SLOT_CLASS.length).map((e, i) => (
-            <li key={e.slug} className={`ev ${SLOT_CLASS[i]}`}>
-              <a href="#events" aria-label={e.title}>
-                {e.image && <img className="ev-img" src={e.image} alt="" />}
-                <span className="ev-fade" aria-hidden />
-                <span className="ev-text">{e.title}</span>
-                <img className="ev-arrow" src="/figma/arrow-right.svg" alt="" aria-hidden />
-              </a>
-            </li>
-          ))}
-        </ul>
+        <EventList events={events} />
 
         {section.button && (
           <a href={section.button.url ?? "#events"} className="events-btn">

@@ -28,7 +28,7 @@ export default async function ContactPage() {
 
   return (
     <div className="page" id="top">
-      <Header settings={settings} nav={home.nav.header} shops={home.shops} labels={labels} />
+      <Header settings={settings} nav={home.nav.header} shops={home.shops} products={home.products} labels={labels} />
       <main>
         <section className="c-hero" aria-labelledby="contact-title" style={{ "--shade": overlay / 100 } as React.CSSProperties}>
           <img className="c-hero-bg" src={hero?.image ?? "/figma/contact-hero.png"} alt="" />

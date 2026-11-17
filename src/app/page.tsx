@@ -9,6 +9,7 @@ import Events from "@/components/Events";
 import Blogs from "@/components/Blogs";
 import Footer from "@/components/Footer";
 import ParallaxScroll from "@/components/ParallaxScroll";
+import TouchReveal from "@/components/TouchReveal";
 import { makeLabels } from "@/lib/labels";
 
 export default async function Home() {
@@ -17,7 +18,7 @@ export default async function Home() {
   const assets = home.assets;
   return (
     <div className="page" id="top">
-      <Header settings={home.settings} nav={home.nav.header} shops={home.shops} labels={labels} />
+      <Header settings={home.settings} nav={home.nav.header} shops={home.shops} products={home.products} labels={labels} />
       <main>
         <Hero section={home.sections.hero} slides={home.hero_slides ?? []} assets={assets} labels={labels} />
         <Products section={home.sections.products} products={home.products} />
@@ -28,6 +29,7 @@ export default async function Home() {
         <Blogs section={home.sections.blogs} posts={home.blogs} assets={assets} />
       </main>
       <ParallaxScroll />
+      <TouchReveal />
       <Footer settings={home.settings} footer={home.nav.footer} legal={home.nav.legal} texts={home.sections.footer?.extra} labels={labels} />
     </div>
   );
