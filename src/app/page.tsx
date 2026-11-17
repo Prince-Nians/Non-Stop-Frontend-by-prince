@@ -1,5 +1,6 @@
 import { getHome } from "@/lib/content";
 import Header from "@/components/Header";
+import PageHeadTags from "@/components/PageHeadTags";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import PartnerBand from "@/components/PartnerBand";
@@ -11,6 +12,13 @@ import Footer from "@/components/Footer";
 import ParallaxScroll from "@/components/ParallaxScroll";
 import TouchReveal from "@/components/TouchReveal";
 import { makeLabels } from "@/lib/labels";
+import { pageMetadata, siteUrl } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const home = await getHome();
+  return pageMetadata(home, "home", home.settings.site_name);
+}
 
 export default async function Home() {
   const home = await getHome();
@@ -18,6 +26,23 @@ export default async function Home() {
   const assets = home.assets;
   return (
     <div className="page" id="top">
+      {/* Structured data: tells search engines this is the NON STOP brand (name, logo, contact, social profiles). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: home.settings.site_name,
+            url: siteUrl(),
+            logo: home.settings.logo ?? undefined,
+            email: home.settings.email ?? undefined,
+            telephone: home.settings.phone ?? undefined,
+            sameAs: Object.values(home.settings.social ?? {}).filter(Boolean),
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+      <PageHeadTags seo={home.seo?.home} />
       <Header settings={home.settings} nav={home.nav.header} shops={home.shops} products={home.products} labels={labels} />
       <main>
         <Hero section={home.sections.hero} slides={home.hero_slides ?? []} assets={assets} labels={labels} />

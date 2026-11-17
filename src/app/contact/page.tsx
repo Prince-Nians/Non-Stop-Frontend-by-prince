@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import PageHeadTags from "@/components/PageHeadTags";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import ContactInfo from "@/components/contact/ContactInfo";
@@ -8,10 +9,11 @@ import Faq from "@/components/contact/Faq";
 import { assetSrc } from "@/lib/assets";
 import { getHome } from "@/lib/content";
 import { makeLabels } from "@/lib/labels";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { sections, settings } = await getHome();
-  return { title: `${sections.contact_hero?.title ?? "Contact Us"} — ${settings.site_name}` };
+  const home = await getHome();
+  return pageMetadata(home, "contact", `${home.sections.contact_hero?.title ?? "Contact Us"} — ${home.settings.site_name}`);
 }
 
 export default async function ContactPage() {
@@ -28,6 +30,7 @@ export default async function ContactPage() {
 
   return (
     <div className="page" id="top">
+      <PageHeadTags seo={home.seo?.contact} />
       <Header settings={settings} nav={home.nav.header} shops={home.shops} products={home.products} labels={labels} />
       <main>
         <section className="c-hero" aria-labelledby="contact-title" style={{ "--shade": overlay / 100 } as React.CSSProperties}>

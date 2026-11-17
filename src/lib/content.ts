@@ -47,6 +47,19 @@ export type AboutSlide = {
 };
 export type EventItem = { title: string; slug: string; excerpt?: string; image?: string | null; published_at?: string };
 
+export type PageSeo = {
+  title: string | null;
+  description: string | null;
+  keywords: string | null;
+  og_title: string | null;
+  og_description: string | null;
+  og_image: string | null;
+  canonical_url: string | null;
+  no_index: boolean;
+  custom_meta?: { attr: "name" | "property" | "http-equiv"; name: string; content: string }[];
+  json_ld?: string | null;
+};
+
 export type HomeContent = {
   settings: {
     site_name: string;
@@ -64,6 +77,7 @@ export type HomeContent = {
   products: Product[];
   assets?: Record<string, { image: string | null; alt: string | null }>;
   faqs?: { question: string; answer: string }[];
+  seo?: Record<string, PageSeo>;
   hero_slides: HeroSlide[];
   about_slides: AboutSlide[];
   about_points: { title: string; body: string | null }[];

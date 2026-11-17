@@ -684,5 +684,31 @@
       "question": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a ?",
       "answer": "A eleifend turpis sed orci est amet. Urna nulla ut nunc in fusce a. Lacinia nulla sapien malesuada amet tortor cras ut sapien. Metus nibh facilisis sed pellentesque adipiscing venenatis faucibus nisi."
     }
-  ]
+  ],
+  "seo": {
+    "home": {
+      "title": "NON STOP — Stay Nonstop",
+      "description": "NON STOP energy drink — explore our flavours, find where to buy, partner with us, and read the latest events and blogs.",
+      "keywords": "energy drink, non stop, nonstop energy, buy energy drink, energy drink flavours",
+      "og_title": null,
+      "og_description": null,
+      "og_image": null,
+      "canonical_url": null,
+      "no_index": false,
+      "custom_meta": [],
+      "json_ld": null
+    },
+    "contact": {
+      "title": "Contact Us — NON STOP",
+      "description": "Get in touch with the NON STOP team. Send us a message, find our email, phone number and address, and read our frequently asked questions.",
+      "keywords": "contact non stop, non stop energy drink contact, customer support",
+      "og_title": null,
+      "og_description": null,
+      "og_image": null,
+      "canonical_url": null,
+      "no_index": false,
+      "custom_meta": [],
+      "json_ld": null
+    }
+  }
 }
