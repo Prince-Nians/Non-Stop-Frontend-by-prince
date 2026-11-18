@@ -1,13 +1,6 @@
-/** The lime scrolling strip ("MAXIMUM EFFECT ⊗ NONSTOP ENERGY ⊗ …"). Purely decorative, so it is hidden from screen readers. */
-function XMark() {
-  return (
-    <svg className="mq-x" viewBox="0 0 24 24" aria-hidden>
-      <circle cx="12" cy="12" r="10" />
-      <path d="M7.5 7.5l9 9M16.5 7.5l-9 9" />
-    </svg>
-  );
-}
+import XMark from "./XMark";
 
+/** The lime scrolling strip ("MAXIMUM EFFECT ⊗ NONSTOP ENERGY ⊗ …"). Purely decorative, so it is hidden from screen readers. */
 export default function Marquee({ phrases }: { phrases: string[] }) {
   const words = phrases.length ? phrases : ["MAXIMUM EFFECT", "NONSTOP ENERGY"];
   // One block is wider than any screen; the track holds two identical blocks and slides by exactly one.

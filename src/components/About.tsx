@@ -4,16 +4,25 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { AboutSlide, Section } from "@/lib/content";
 import { assetSrc, type Assets } from "@/lib/assets";
 import { fmt, type Labels } from "@/lib/labels";
+import XMark from "./XMark";
 
-// The "NON STOP" labels sit on an even grid along each ribbon and glide slowly along it (see .ribbon-track).
-// One extra label on each side lets the loop restart without a visible jump.
-const RIBBON_A = Array.from({ length: 8 }, (_, i) => ({ x: -127.56 + (i - 1) * 300.77, y: 2233.91 + (i - 1) * 30.41 }));
-const RIBBON_B = Array.from({ length: 8 }, (_, i) => ({
-  x: -103.64 + (i - 1) * 298.03,
-  y: 2447.4 - (i - 1) * 50.66,
+// "NON STOP" labels sit close together along each ribbon (three clearly visible at once), with a circled ✕ halfway between them. They sit on an even grid along the
+// ribbon and glide along it (see .ribbon-track); extra copies on each side let the loop restart without a visible jump.
+const PITCH = 285; // horizontal distance between two labels (design pixels)
+const COUNT = 9;
+const SLOPE_A = 30.41 / 300.77; // ribbon A rises this much per pixel to the right
+const SLOPE_B = 50.66 / 298.03; // ribbon B falls this much per pixel to the right
+const ICON = 40; // icon box size
+const RIBBON_A = Array.from({ length: COUNT }, (_, i) => ({ x: -127.56 + (i - 1) * PITCH, y: 2233.91 + (i - 1) * PITCH * SLOPE_A }));
+const RIBBON_B = Array.from({ length: COUNT }, (_, i) => ({
+  x: -103.64 + (i - 1) * PITCH,
+  y: 2447.4 - (i - 1) * PITCH * SLOPE_B,
   w: 206.03,
   h: 78.93,
 }));
+// Centre of an icon = halfway between the centres of two neighbouring labels.
+const iconA = (t: { x: number; y: number }) => ({ x: t.x + 204.781 / 2 + PITCH / 2 - ICON / 2, y: t.y + 65.87 / 2 + (PITCH / 2) * SLOPE_A - ICON / 2 });
+const iconB = (t: { x: number; y: number; w: number; h: number }) => ({ x: t.x + t.w / 2 + PITCH / 2 - ICON / 2, y: t.y + t.h / 2 - (PITCH / 2) * SLOPE_B - ICON / 2 });
 
 // Section top in the Figma frame — used to turn frame coordinates into section-relative ones.
 const TOP = 1888;
@@ -131,6 +140,10 @@ export default function About({
                     <p>{ribbonText}</p>
                   </div>
                 ))}
+                {RIBBON_A.map((t, i) => {
+                  const c = iconA(t);
+                  return <XMark key={`ax${i}`} className="ribbon-x ribbon-x-a" style={{ "--x": c.x, "--y": c.y - TOP } as React.CSSProperties} />;
+                })}
               </div>
               <div className="ribbon ribbon-b">
                 <div className="ribbon-bar ribbon-bar-b" />
@@ -145,6 +158,10 @@ export default function About({
                     <p>{ribbonText}</p>
                   </div>
                 ))}
+                {RIBBON_B.map((t, i) => {
+                  const c = iconB(t);
+                  return <XMark key={`bx${i}`} className="ribbon-x ribbon-x-b" style={{ "--x": c.x, "--y": c.y - TOP } as React.CSSProperties} />;
+                })}
               </div>
             </div>
 

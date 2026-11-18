@@ -1,5 +1,6 @@
 import type { Product, Section } from "@/lib/content";
 import { Lines } from "@/lib/format";
+import ProductsReveal from "./ProductsReveal";
 
 // Card slots in the Figma layout (left → right). The design has room for four.
 const SLOT_CLASS = ["p-blue", "p-green", "p-purple", "p-zero"];
@@ -26,7 +27,12 @@ export default function Products({ section, products }: { section: Section; prod
             </li>
           ))}
         </ul>
+
+        <a href={section.button?.url ?? "#about"} className="prod-more">
+          {section.button?.label ?? "Learn More"}
+        </a>
       </div>
+      <ProductsReveal />
     </section>
   );
 }

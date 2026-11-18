@@ -10,7 +10,6 @@ import { useEffect } from "react";
 const GROUPS: { sel: string; move?: boolean }[] = [
   { sel: ".sec-title", move: true },
   { sel: ".prod-desc, .events-desc, .social-desc, .about-desc, .blogs-desc", move: true },
-  { sel: ".prod-card" },
   { sel: ".band-shop", move: true },
   { sel: ".band-btn, .about-btn, .social-btn, .events-btn", move: true },
   { sel: ".about-point", move: true },
